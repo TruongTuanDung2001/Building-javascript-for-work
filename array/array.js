@@ -50,12 +50,37 @@ arrPop = arrNumber.pop(); //lay gia tri phan tu mang cuoi cung, dong thoi xoa ph
 console.log(arrPop); //xuat gia tri mang cuoi da tach ra man hinh
 console.log(arrNumber); //mang ban dau thay doi, mat di phan tu mang cuoi cung
 
-//PUP
+//PUSH
 console.log('Array push');
-let arrPush = arrNumber.push(18); //them 1 pt va tra ve do dai mang
-console.log(arrPush); //xuat do dai mang hien tai sau khi them phan tu
+let arrPushLength = arrNumber.push(18); //them 1 pt va tra ve do dai mang
+console.log(arrPushLength); //xuat do dai mang hien tai sau khi them phan tu
 console.log(arrNumber); //xuat mang hien tai sau khi them 1 phan tu
 
+//
+function pop(arr){
+    let arrLength = arr[arr.length - 1];
+    let newArr = [];
+    for(let i = 0; i < arr.length - 1; i++){
+        newArr[i] = arr[i];
+    }
+    //gán lại
+    arr.length = 0;
+    for(let i = 0; i < newArr.length; i++){
+        arr[i] = newArr[i];
+    }
+    return arrLength;
+}
+console.log("Pop function: " +  pop(arrNumber));
+console.log(arrNumber);
+
+//
+function push(arr, element){ //thêm 1 pt vào cuối mảng, trả về độ dài mới của mảng
+    arr[arr.length] = element;
+    return arr.length;
+}
+
+console.log("Push function: " + push(arrNumber, 18));
+console.log(arrNumber);
 
 
 
