@@ -82,11 +82,56 @@ function push(arr, element){ //thêm 1 pt vào cuối mảng, trả về độ d
 console.log("Push function: " + push(arrNumber, 18));
 console.log(arrNumber);
 
+//shilft
+console.log('Array shift');
+let arrShift = arrNumber.shift(); //lay gia tri phan tu dau tien, dong thoi xoa phan tu dau trong mang
+console.log(arrShift); //xuat gia tri phan tu dau tien da tach
+console.log(arrNumber); 
 
+//
+function shift(arr){
+    let first = arr[0];
+    let newArr = [];
+    //
+    if(arr.length > 0){
+        for(let i = 1; i < arr.length; i++){ // 1 2 3 4 5 6 7 || < length = 7
+            newArr[i - 1] = arr[i]; // 1 2 3 4 5 6
+        }
+    }else{
+        return undefined;
+    }
+    //gán lại
+    arr.length = 0; //xóa hết phần tử trong mảng ban đầu
+    for(let i = 0; i < newArr.length; i++){
+        arr[i] = newArr[i];
+    }
+    return first;
+}
 
+console.log("Shift function: " + shift(arrNumber));
+console.log(arrNumber);
 
+//unshift
+console.log('Array unshift');
+let arrUnshift = arrNumber.unshift(0);
+console.log(arrUnshift); //xuat do dai mang sau khi them 1 phan tu vao dau mang
+console.log(arrNumber); //xuat mang sau khi them 1 phan tu vao dau mang
 
-
+function unshift(arr, element){
+    let newArr = [];
+    newArr[0] = element;
+    for(let i = 0; i < arr.length; i++){
+        newArr[i + 1] = arr[i]; // [1, 2, 3, 4, 5, 6, 7] => [0, 1, 2, 3, 4, 5, 6, 7]
+    }
+    //gán lại
+    arr.length = 0;
+    for(let i = 0; i < newArr.length; i++){
+        arr[i] = newArr[i];
+    }
+    return arr.length;
+}
+console.log("Unshift function: " + unshift(arrNumber, 99));
+console.log(arrNumber);
 
 
 
