@@ -143,3 +143,39 @@ function reverse(arr){
 }
 console.log('function reverse');
 console.log(reverse(arr9));
+
+//exp10
+//add 'A' 'B' 'C'
+//get first 
+//add 'D' in arr
+console.log('exp10')
+let queue = [];
+queue.push('A', 'B', 'C');
+queue.shift();
+queue.push('D');
+console.log(queue);
+
+//exp11
+//limit arr / if arr.length > maxLength => remove value first arr [1, 2, 3, 4], 3 => [2, 3, 4]
+function limitArr(arr, maxLength){
+    let position = 0;
+    let newArr = [];
+    let count = 0;
+    if(arr.length <= maxLength){
+        return arr;
+    }else{
+        position = arr.length - maxLength;
+        for(let i = position; i < arr.length; i++){ // < arr.length is enough value in arr, 5 get 3 => run 2 to 5 => 3 times
+            newArr[count] = arr[i];
+            count++;
+        }
+        arr.length = 0;
+        for(let i = 0; i < newArr.length; i++){
+            arr[i] = newArr[i];
+        }
+    }
+    return arr;
+}
+let arr11 = [1, 2, 3, 4, 5];
+console.log(limitArr(arr11, 3));
+
