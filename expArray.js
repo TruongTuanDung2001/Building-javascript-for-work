@@ -86,4 +86,60 @@ arr6.shift();
 arr6.unshift(0);
 console.log(arr6);
 
+//exp7
+//write funcion remove last
+function removeLast(arr){
+    let element = arr[arr.length - 1];
+    arr.length = arr.length - 1;
+    return element;
+}
+let arr7 = [1, 2, 3, 4, 5, 6];
+console.log("exp 7");
+console.log(removeLast(arr7));
+console.log(arr7);
 
+//exp8
+//write function addFirst
+function addFirst(arr, e){
+    let newArr = [];
+    newArr[0] = e;
+    for(let i = 0; i < arr.length; i++){
+        newArr[i + 1] = arr[i];
+    }
+    arr.length = 0;
+    for(let i = 0; i < newArr.length; i++){
+        arr[i] = newArr[i];
+    }
+    return arr.length;
+}
+let arr8 = [10, 20, 30];
+console.log('exp 8');
+console.log(addFirst(arr8, 30));
+console.log(arr8);
+
+//exp 9
+//reverse arr, use push + shift
+let arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let newArr9 = [];
+//
+for(let i = arr9.length - 1; i >= 0; i--){
+    newArr9[i] = arr9.shift();
+}
+console.log(newArr9);
+arr9 = newArr9;
+//function reverse
+function reverse(arr){
+    let arrReverse = [];
+    let count = 0;
+    for(let i = arr.length - 1; i >= 0; i--){
+        arrReverse[count] = arr[i];
+        count++;
+    }
+    arr.length = 0;
+    for(let i = 0; i < arrReverse.length; i++){
+        arr[i] = arrReverse[i];
+    }
+    return arr;
+}
+console.log('function reverse');
+console.log(reverse(arr9));
