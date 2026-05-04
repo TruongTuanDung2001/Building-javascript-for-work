@@ -179,3 +179,28 @@ function limitArr(arr, maxLength){
 let arr11 = [1, 2, 3, 4, 5];
 console.log(limitArr(arr11, 3));
 
+
+//EXP ARRAY METHOD 2 || FOREACH - MAP - FILTER
+//exp12
+console.log('exp 12');
+let arr12 = [1, 2, 3, 4, 5];
+//Print all item in array
+arr12.forEach(function(item){
+    console.log(item)
+})
+
+//exp13
+console.log('exp 13');
+let arr13 = [1, 2, 3, 4, 5];
+//use map for square item in arr
+let newArr13 = arr13.map(num => num * num);
+console.log(newArr13);
+
+//exp14
+console.log('exp 14');
+let arr14 = [1, 2, 3, 4, 5, 6];
+//use method filter filter is number even
+let newArr14 = arr14.filter(num => num % 2 == 0);
+console.log(newArr14);
+
+
