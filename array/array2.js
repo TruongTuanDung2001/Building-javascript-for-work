@@ -46,5 +46,22 @@ function myFunc(num){
 const newArrMap2 = arrMap.map(myFunc);
 console.log(newArrMap2);
 
+//map tra ve [undefine, 9, undefine, 25]; du co lam gi van giu dung gia tri length khong thay doi
+console.log('map 3');
+const newArrMap3 = arrMap.map(notEven);
+console.log(newArrMap3);
+
+//filter
+console.log('Filter');
+let arrFilter = [1, 2, 3, 4, 5, 6, 7, 8, 22, 33];
+const newArrFilter = arrFilter.filter(notEven);
+function notEven(num){
+    if(num % 2 != 0){
+        return num;
+    }
+}
+//filter: loc cac phan tu trong mang, tra ve mang moi gom cac phan tu con thoa dieu kien, length mang moi co the nho hon mang ban dau
+console.log(arrFilter);
+console.log(newArrFilter);
 
 
