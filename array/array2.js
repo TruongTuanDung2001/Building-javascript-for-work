@@ -13,8 +13,26 @@ console.log(arrDelete.length);
 //Concat
 let arrConcat1 = [1, 2, 3, 4];
 let arrConcat2 = ['a', 'b', 'c', 'd'];
-const arrConcatAll = arrConcat1.concat(arrConcat2);
+let arrConcat3 = [{id: 1, name: 'Tomy'}, {id: 2, name:"Zidane"}];
+const arrConcatAll = arrConcat1.concat(arrConcat2, arrConcat3);
 //Add two array to one large array 
 console.log(arrConcatAll);
 console.log(arrConcatAll.length);
+
+//foreach
+console.log('foreach event');
+let arrForeach = [12, 23, 33, 44, 56, 72, 99];
+let arrEven = [];
+//duyet tung phan tu, mang cu khong bien doi, khong tra ve mang moi
+arrForeach.forEach(function(item){
+    if(item % 2 == 0){
+        console.log(item);
+        arrEven.push(item);
+    }
+})
+console.log(arrEven);
+
+//
+
+
 
