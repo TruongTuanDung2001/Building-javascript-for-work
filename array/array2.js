@@ -32,7 +32,19 @@ arrForeach.forEach(function(item){
 })
 console.log(arrEven);
 
-//
+//map
+console.log('Map');
+let arrMap = [4, 9, 16, 25];
+const newArrMap = arrMap.map(Math.sqrt);
+//duyet tung phan tu mang, cho ra 1 mang moi
+console.log(arrMap);
+console.log(newArrMap);
+
+function myFunc(num){
+    return num * 10;
+}
+const newArrMap2 = arrMap.map(myFunc);
+console.log(newArrMap2);
 
 
 
