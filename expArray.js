@@ -4,7 +4,7 @@ let arr1 = [1, 2, 3];
 console.log("exp1");
 arr1.push(4);
 console.log(arr1);
-function exp1 (arr, element){
+function exp1(arr, element) {
     arr[arr.length] = element;
     return arr.length;
 }
@@ -17,7 +17,7 @@ let arr2 = [10, 20, 30, 40];
 //remove last number in arr2
 arr2.pop();
 console.log(arr2);
-function exp2(arr){
+function exp2(arr) {
     let element = arr[arr.length - 1];
     arr.length = arr.length - 1;
     return element;
@@ -31,14 +31,14 @@ console.log("exp3");
 //add number 4 in first arr
 arr3.unshift(4);
 console.log(arr3);
-function exp3(arr, element){
+function exp3(arr, element) {
     let newArr = [];
     newArr[0] = element;
-    for(let i = 0; i < arr.length; i++){ //length = 3, run 0 1 2
+    for (let i = 0; i < arr.length; i++) { //length = 3, run 0 1 2
         newArr[i + 1] = arr[i];
     }
     arr.length = 0;
-    for(let i = 0; i < newArr.length; i++){
+    for (let i = 0; i < newArr.length; i++) {
         arr[i] = newArr[i];
     }
     return newArr.length;
@@ -52,14 +52,14 @@ let arr4 = [100, 200, 300];
 console.log("exp4");
 arr4.shift();
 console.log(arr4);
-function exp4(arr){
+function exp4(arr) {
     let newArr = [];
     let element = arr[0];
-    for(let i = 1; i < arr.length; i++){
+    for (let i = 1; i < arr.length; i++) {
         newArr[i - 1] = arr[i];
     }
     arr.length = 0;
-    for(let i = 0; i < newArr.length; i++){
+    for (let i = 0; i < newArr.length; i++) {
         arr[i] = newArr[i];
     }
     return element;
@@ -88,7 +88,7 @@ console.log(arr6);
 
 //exp7
 //write funcion remove last
-function removeLast(arr){
+function removeLast(arr) {
     let element = arr[arr.length - 1];
     arr.length = arr.length - 1;
     return element;
@@ -100,14 +100,14 @@ console.log(arr7);
 
 //exp8
 //write function addFirst
-function addFirst(arr, e){
+function addFirst(arr, e) {
     let newArr = [];
     newArr[0] = e;
-    for(let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         newArr[i + 1] = arr[i];
     }
     arr.length = 0;
-    for(let i = 0; i < newArr.length; i++){
+    for (let i = 0; i < newArr.length; i++) {
         arr[i] = newArr[i];
     }
     return arr.length;
@@ -122,21 +122,21 @@ console.log(arr8);
 let arr9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let newArr9 = [];
 //
-for(let i = arr9.length - 1; i >= 0; i--){
+for (let i = arr9.length - 1; i >= 0; i--) {
     newArr9[i] = arr9.shift();
 }
 console.log(newArr9);
 arr9 = newArr9;
 //function reverse
-function reverse(arr){
+function reverse(arr) {
     let arrReverse = [];
     let count = 0;
-    for(let i = arr.length - 1; i >= 0; i--){
+    for (let i = arr.length - 1; i >= 0; i--) {
         arrReverse[count] = arr[i];
         count++;
     }
     arr.length = 0;
-    for(let i = 0; i < arrReverse.length; i++){
+    for (let i = 0; i < arrReverse.length; i++) {
         arr[i] = arrReverse[i];
     }
     return arr;
@@ -157,20 +157,20 @@ console.log(queue);
 
 //exp11
 //limit arr / if arr.length > maxLength => remove value first arr [1, 2, 3, 4], 3 => [2, 3, 4]
-function limitArr(arr, maxLength){
+function limitArr(arr, maxLength) {
     let position = 0;
     let newArr = [];
     let count = 0;
-    if(arr.length <= maxLength){
+    if (arr.length <= maxLength) {
         return arr;
-    }else{
+    } else {
         position = arr.length - maxLength;
-        for(let i = position; i < arr.length; i++){ // < arr.length is enough value in arr, 5 get 3 => run 2 to 5 => 3 times
+        for (let i = position; i < arr.length; i++) { // < arr.length is enough value in arr, 5 get 3 => run 2 to 5 => 3 times
             newArr[count] = arr[i];
             count++;
         }
         arr.length = 0;
-        for(let i = 0; i < newArr.length; i++){
+        for (let i = 0; i < newArr.length; i++) {
             arr[i] = newArr[i];
         }
     }
@@ -185,7 +185,7 @@ console.log(limitArr(arr11, 3));
 console.log('exp 12');
 let arr12 = [1, 2, 3, 4, 5];
 //Print all item in array
-arr12.forEach(function(item){
+arr12.forEach(function (item) {
     console.log(item)
 })
 
@@ -216,7 +216,7 @@ console.log('exp16');
 let arr16 = [10, 15, 20, 25, 30];
 //filter number larger 15 and print each element
 let newArr16 = arr16.filter(num => num > 15);
-newArr16.forEach(function(item){
+newArr16.forEach(function (item) {
     console.log(item);
 })
 
@@ -232,7 +232,7 @@ console.log('exp18');
 let arr18 = [1, 2, 3, 4, 5];
 //use foreach to total item in array
 let total18 = 0;
-arr18.forEach(function(item){
+arr18.forEach(function (item) {
     total18 += item;
 })
 console.log(total18);
@@ -240,24 +240,24 @@ console.log(total18);
 // ||||||||||||||||||||||||||🔥 //
 //exp19
 let arr19 = [1, 2, 3, 4, 5];
-console.log('exp19');                    
+console.log('exp19');
 //Filter number even, square number and get number larger ten
 let newArr19 = arr19.filter(num => num % 2 == 0)
-                    .map(num => num * num)
-                    .filter(num => num > 10);
-console.log(newArr19);                    
+    .map(num => num * num)
+    .filter(num => num > 10);
+console.log(newArr19);
 
 //exp20
 console.log('exp20');
 let users20 = [
-    {name: 'A', age: 18},
-    {name: 'B', age: 22},
-    {name: 'C', age: 16},
+    { name: 'A', age: 18 },
+    { name: 'B', age: 22 },
+    { name: 'C', age: 16 },
 ];
 //get ['A', 'B'] - Users >= 18;
 let newUsers20 = users20.filter(element => element.age >= 18); //[{name: 'A', age: 18}, {name: 'B', age: 22}];
-let result20 =  [];
-newUsers20.forEach(function(item){
+let result20 = [];
+newUsers20.forEach(function (item) {
     result20.push(item.name);
 })
 console.log(result20); //['A', 'B'];
@@ -267,7 +267,7 @@ console.log('exp21');
 let arr21 = [1, 2, 3, 4, 5];
 //use forEach create new array alike method map
 let newArr21 = [];
-arr21.forEach(function(item){
+arr21.forEach(function (item) {
     newArr21.push(item * 2);
 })
 console.log(newArr21);
@@ -277,9 +277,75 @@ console.log('exp22');
 let arr22 = [5, 10, 15, 20, 25, 30];
 //use foreach create new array alike method filter
 let newArr22 = [];
-arr22.forEach(function(item){
-    if(item >= 20){
+arr22.forEach(function (item) {
+    if (item >= 20) {
         newArr22.push(item);
     }
 });
 console.log(newArr22);
+
+// ||||||||||||||||| 🔥🔥 //
+//exp23
+console.log('exp23');
+let cart23 = [
+    { name: 'iphone', price: 1000 },
+    { name: 'samsung', price: 800 },
+    { name: 'xiaomi', price: 500 }
+];
+//create new arr [1000, 800, 500];
+let newCart23 = [];
+cart23.forEach(function (item) {
+    newCart23.push(item.price);
+});
+console.log(newCart23);
+
+//exp24
+console.log('exp24');
+let cart24 = [
+    { name: 'iphone', price: 1000 },
+    { name: 'samsung', price: 800 },
+    { name: 'xiaomi', price: 500 }
+];
+//filter price large 700
+let newArr24 = cart24.filter(item => item.price > 700);
+console.log(newArr24);
+
+//exp25
+console.log('exp25');
+let cart25 = [
+    { name: 'iphone', price: 1000 },
+    { name: 'samsung', price: 800 },
+    { name: 'xiaomi', price: 500 }
+];
+// create new array, add expensive (price > 700 => true else => false)
+/*
+    [
+        {name: 'iphone', price: 1000, expensive: true},
+    ...
+    ] 
+*/
+let newCart25 = [];
+cart25.forEach(function (item) {
+    newCart25.push({...item}); // spread operator AMAZING :))
+    //Tách cái object của item ra thành 1 cái mới
+    /*
+        item = { name: 'iphone', price: 1000 } thành { name: 'iphone', price: 1000 }
+        Nếu không tách mà dùng chung thì thay đổi object thì cái nào sử dụng object cũng thay đổi theo
+        Chú ý: nó chỉ copy cái object nông ở ngoài thôi: vd: let obj = {
+            name: 'iphone',
+            info: { color: 'black' }
+        };
+
+        let copy = { ...obj };
+        Cái name ok, còn info nó chứa 1 object nữa nên kh lấy kiểu spread operator được :))
+    */
+})
+newCart25.forEach(function (item) {
+    if (item.price > 700) {
+        item.expensive = true;
+    } else {
+        item.expensive = false;
+    }
+})
+console.log(newCart25);
+console.log(cart25);
