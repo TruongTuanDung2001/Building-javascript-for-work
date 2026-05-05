@@ -349,3 +349,16 @@ newCart25.forEach(function (item) {
 })
 console.log(newCart25);
 console.log(cart25);
+
+//exp25
+console.log('exp26');
+let cart26 = [
+    { name: 'iphone', price: 1000 },
+    { name: 'samsung', price: 800 },
+    { name: 'xiaomi', price: 500 }
+];
+//filter price large 700 get name and print result
+let newCart26 = cart26.filter(item => item.price > 700);
+newCart26.forEach(function(item){
+    console.log(item.name);
+});
