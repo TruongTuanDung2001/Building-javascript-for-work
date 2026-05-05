@@ -237,3 +237,49 @@ arr18.forEach(function(item){
 })
 console.log(total18);
 
+// ||||||||||||||||||||||||||🔥 //
+//exp19
+let arr19 = [1, 2, 3, 4, 5];
+console.log('exp19');                    
+//Filter number even, square number and get number larger ten
+let newArr19 = arr19.filter(num => num % 2 == 0)
+                    .map(num => num * num)
+                    .filter(num => num > 10);
+console.log(newArr19);                    
+
+//exp20
+console.log('exp20');
+let users20 = [
+    {name: 'A', age: 18},
+    {name: 'B', age: 22},
+    {name: 'C', age: 16},
+];
+//get ['A', 'B'] - Users >= 18;
+let newUsers20 = users20.filter(element => element.age >= 18); //[{name: 'A', age: 18}, {name: 'B', age: 22}];
+let result20 =  [];
+newUsers20.forEach(function(item){
+    result20.push(item.name);
+})
+console.log(result20); //['A', 'B'];
+
+//exp21
+console.log('exp21');
+let arr21 = [1, 2, 3, 4, 5];
+//use forEach create new array alike method map
+let newArr21 = [];
+arr21.forEach(function(item){
+    newArr21.push(item * 2);
+})
+console.log(newArr21);
+
+//exp22
+console.log('exp22');
+let arr22 = [5, 10, 15, 20, 25, 30];
+//use foreach create new array alike method filter
+let newArr22 = [];
+arr22.forEach(function(item){
+    if(item >= 20){
+        newArr22.push(item);
+    }
+});
+console.log(newArr22);
