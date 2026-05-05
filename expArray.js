@@ -203,4 +203,37 @@ let arr14 = [1, 2, 3, 4, 5, 6];
 let newArr14 = arr14.filter(num => num % 2 == 0);
 console.log(newArr14);
 
+//exp15 || odd: số lẻ :))
+//add , subtraction, multiplication, division
+console.log('exp 15');
+let arr15 = [1, 2, 3, 4, 5];
+//filter number odd and multiplication number by 2
+let newArr = arr15.filter(num => num % 2 != 0).map(num => num * 2);
+console.log(newArr);
+
+//exp16
+console.log('exp16');
+let arr16 = [10, 15, 20, 25, 30];
+//filter number larger 15 and print each element
+let newArr16 = arr16.filter(num => num > 15);
+newArr16.forEach(function(item){
+    console.log(item);
+})
+
+//exp17
+console.log('exp17');
+let arr17 = ['a', 'b', 'c'];
+//use map create 'A', 'B', 'C'
+let newArr17 = arr17.map(item => item.toUpperCase());
+console.log(newArr17);
+
+//exp18
+console.log('exp18');
+let arr18 = [1, 2, 3, 4, 5];
+//use foreach to total item in array
+let total18 = 0;
+arr18.forEach(function(item){
+    total18 += item;
+})
+console.log(total18);
 
