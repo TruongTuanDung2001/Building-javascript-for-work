@@ -350,7 +350,7 @@ newCart25.forEach(function (item) {
 console.log(newCart25);
 console.log(cart25);
 
-//exp25
+//exp26
 console.log('exp26');
 let cart26 = [
     { name: 'iphone', price: 1000 },
@@ -362,3 +362,44 @@ let newCart26 = cart26.filter(item => item.price > 700);
 newCart26.forEach(function(item){
     console.log(item.name);
 });
+
+
+// |||||||| Interview 🔥 🔥 \\
+//exp 27
+console.log('exp27');
+let arr27 = [1, 2, 3, 4, 5];
+//use method map if item number is even => multitpicaiton two, else keep unchange
+let newArr27 = arr27.map(function(num){
+    if(num % 2 == 0){
+        num = num * 2; //phai gan lai gia tri va return gia tri thay doi trong ham map
+        return num;
+    }
+    return num;
+});
+console.log(newArr27);
+
+//exp 28
+console.log('exp28');
+let arr28 = [1, 2, 3, 4, 5];
+//use method filter but remove number divisible(chia hết) division(phép chia) by three
+let newArr28 = arr28.filter(num => num % 3 !=0);
+console.log(newArr28);
+
+//exp 29
+console.log('exp29');
+let arr29 = [1, 2, 3, 4, 5];
+//use 1 row, filter number even, multipication three and print
+arr29.filter(number => number % 2 === 0).map(item => item * 3).forEach(item => console.log(item));
+
+//exp 30
+console.log('exp30');
+let users30 = [
+  {name: 'A', age: 18},
+  {name: 'B', age: 22},
+  {name: 'C', age: 16},
+  {name: 'D', age: 30}
+];
+//condition age > 20, just take name, write brief
+let newUser30 = users30.filter(item => item.age > 20).map(item => item.name);// filter chạy trước => tạo ra mảng mới vừa lặp => thực hiện map => trả về mảng mới
+// Thứ tự viết = thứ tự chạy || Viết trước chạy trước 
+console.log(newUser30);
