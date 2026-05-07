@@ -403,3 +403,57 @@ let users30 = [
 let newUser30 = users30.filter(item => item.age > 20).map(item => item.name);// filter chạy trước => tạo ra mảng mới vừa lặp => thực hiện map => trả về mảng mới
 // Thứ tự viết = thứ tự chạy || Viết trước chạy trước 
 console.log(newUser30);
+
+// 🔥||||| SOME - FIND - REDUCE |||||🔥 //
+//
+console.log('find1');
+let arrFind1 = [5, 10, 15, 20];
+//get first number > 10;
+let newArrFind1 = arrFind1.find(num => num > 10);
+console.log(newArrFind1);
+
+//
+console.log('find2');
+let usersFind2 = [
+  {name: 'Dung', age: 18},
+  {name: 'An', age: 22},
+  {name: 'Minh', age: 16}
+];
+//find name user is 'An'
+let resultUserFind2 = usersFind2.find(user => user.name = 'An');
+console.log(resultUserFind2);
+
+//
+console.log('find3');
+let usersFind3 = [
+  {name: 'Dung', age: 18},
+  {name: 'An', age: 22},
+  {name: 'Minh', age: 16}
+];
+//find user have age smaller 18
+let resultUserFind3 = usersFind3.find(user => user.age < 18);
+console.log(resultUserFind3);
+
+//
+console.log('find4');
+let productsFind4 = [
+  {id: 1, name: 'iphone'},
+  {id: 2, name: 'samsung'},
+  {id: 3, name: 'xiaomi'}
+];
+//find product have id = 2;
+let newProductsFind4 = productsFind4.find(product => product.id === 2);
+console.log(newProductsFind4);
+
+//interview style
+console.log('find5');
+let emailsFind5 = [
+  'a@gmail.com',
+  'b@gmail.com',
+  'admin@gmail.com'
+];
+//find email have 'admin'
+let newEmailsFind5 = emailsFind5.find(email => {
+    return email.includes('admin'); //kiểm tra chuỗi chứa 'admin'
+});
+console.log(newEmailsFind5);
