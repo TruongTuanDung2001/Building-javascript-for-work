@@ -457,3 +457,50 @@ let newEmailsFind5 = emailsFind5.find(email => {
     return email.includes('admin'); //kiểm tra chuỗi chứa 'admin'
 });
 console.log(newEmailsFind5);
+
+//Some
+console.log('some1');
+let arrSome1 = [1, 3, 5, 8];
+//check arr have number even
+let resultArrSome1 = arrSome1.some(num => num % 2 === 0);
+console.log(resultArrSome1);
+
+//
+console.log('some2');
+let usersSome2 = [
+  {name: 'A', active: false},
+  {name: 'B', active: false},
+  {name: 'C', active: true}
+];
+//check list users have user active
+let resultSome2 = usersSome2.some(user => user.active == true);
+console.log(resultSome2);
+
+//
+console.log('some3');
+let usersSome3 = [
+  {email: 'admin@gmail.com'},
+  {email: 'test@gmail.com'}
+];
+//check list users have email user is 'admin@gmail.com'
+let resultSome3 = usersSome3.some(email => email.email === 'admin@gmail.com');
+console.log(resultSome3);
+
+//
+console.log('some4');
+let passwordsSome4 = ['123456', 'abcdef', '123abc'];
+//check length password  smaller 6 character
+let resultSome4 = passwordsSome4.some(password => password.length < 6);
+console.log(resultSome4);
+
+//
+console.log('some5');
+let cartSome5 = [
+  {name: 'iphone', quantity: 1},
+  {name: 'samsung', quantity: 0}
+];
+//check cart product have quantity = 0
+let resultSome5 = cartSome5.some(cart => cart.quantity === 0);
+console.log(resultSome5);
+
+// 🔥 REDUCE 🔥
