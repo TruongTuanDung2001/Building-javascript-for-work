@@ -643,3 +643,14 @@ let resultReduce10 = arrReduce10.reduce((acc, num) => {
 }, []);
 console.log(resultReduce10);
 
+//21
+console.log('reduce11');
+let usersReduce11 = [
+  {name: 'A', age: 18},
+  {name: 'B', age: 25},
+  {name: 'C', age: 30}
+];
+//combine method: condition age large 20, total age || kq: 55
+let resultReduce11 = usersReduce11.filter(item => item.age > 18).reduce((acc, item) => acc + item.age, 0);
+console.log(resultReduce11);
+//
