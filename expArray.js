@@ -705,4 +705,26 @@ let resultReduce14 = ordersReduce14.reduce((acc, order) => {
 }, 0)
 console.log(resultReduce14);
 
+//25 hardest
+console.log('reduce15');
+let arrReduce15 = [1, 2, 3, 4, 5];
+//use reduce rewrite array method map, filter
+let mapByReduce = arrReduce15.reduce((acc, num) => {
+    if(num % 2 === 0){
+        acc.push(num * 2);
+    }else{
+        acc.push(num);
+    }
+    return acc;
+}, []); // [1, 4, 3, 8, 5];
+
+let filterByReduce = arrReduce15.reduce((acc, num) => {
+    if(num % 2 !== 0){
+        acc.push(num);
+    }
+    return acc;
+}, []); // [1, 3, 5];
+console.log(mapByReduce);
+console.log(filterByReduce);
+
 
