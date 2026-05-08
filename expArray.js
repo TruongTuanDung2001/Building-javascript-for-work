@@ -326,7 +326,7 @@ let cart25 = [
 */
 let newCart25 = [];
 cart25.forEach(function (item) {
-    newCart25.push({...item}); // spread operator AMAZING :))
+    newCart25.push({ ...item }); // spread operator AMAZING :))
     //Tách cái object của item ra thành 1 cái mới
     /*
         item = { name: 'iphone', price: 1000 } thành { name: 'iphone', price: 1000 }
@@ -359,7 +359,7 @@ let cart26 = [
 ];
 //filter price large 700 get name and print result
 let newCart26 = cart26.filter(item => item.price > 700);
-newCart26.forEach(function(item){
+newCart26.forEach(function (item) {
     console.log(item.name);
 });
 
@@ -369,8 +369,8 @@ newCart26.forEach(function(item){
 console.log('exp27');
 let arr27 = [1, 2, 3, 4, 5];
 //use method map if item number is even => multitpicaiton two, else keep unchange
-let newArr27 = arr27.map(function(num){
-    if(num % 2 == 0){
+let newArr27 = arr27.map(function (num) {
+    if (num % 2 == 0) {
         num = num * 2; //phai gan lai gia tri va return gia tri thay doi trong ham map
         return num;
     }
@@ -382,7 +382,7 @@ console.log(newArr27);
 console.log('exp28');
 let arr28 = [1, 2, 3, 4, 5];
 //use method filter but remove number divisible(chia hết) division(phép chia) by three
-let newArr28 = arr28.filter(num => num % 3 !=0);
+let newArr28 = arr28.filter(num => num % 3 != 0);
 console.log(newArr28);
 
 //exp 29
@@ -394,10 +394,10 @@ arr29.filter(number => number % 2 === 0).map(item => item * 3).forEach(item => c
 //exp 30
 console.log('exp30');
 let users30 = [
-  {name: 'A', age: 18},
-  {name: 'B', age: 22},
-  {name: 'C', age: 16},
-  {name: 'D', age: 30}
+    { name: 'A', age: 18 },
+    { name: 'B', age: 22 },
+    { name: 'C', age: 16 },
+    { name: 'D', age: 30 }
 ];
 //condition age > 20, just take name, write brief
 let newUser30 = users30.filter(item => item.age > 20).map(item => item.name);// filter chạy trước => tạo ra mảng mới vừa lặp => thực hiện map => trả về mảng mới
@@ -415,9 +415,9 @@ console.log(newArrFind1);
 //
 console.log('find2');
 let usersFind2 = [
-  {name: 'Dung', age: 18},
-  {name: 'An', age: 22},
-  {name: 'Minh', age: 16}
+    { name: 'Dung', age: 18 },
+    { name: 'An', age: 22 },
+    { name: 'Minh', age: 16 }
 ];
 //find name user is 'An'
 let resultUserFind2 = usersFind2.find(user => user.name = 'An');
@@ -426,9 +426,9 @@ console.log(resultUserFind2);
 //
 console.log('find3');
 let usersFind3 = [
-  {name: 'Dung', age: 18},
-  {name: 'An', age: 22},
-  {name: 'Minh', age: 16}
+    { name: 'Dung', age: 18 },
+    { name: 'An', age: 22 },
+    { name: 'Minh', age: 16 }
 ];
 //find user have age smaller 18
 let resultUserFind3 = usersFind3.find(user => user.age < 18);
@@ -437,9 +437,9 @@ console.log(resultUserFind3);
 //
 console.log('find4');
 let productsFind4 = [
-  {id: 1, name: 'iphone'},
-  {id: 2, name: 'samsung'},
-  {id: 3, name: 'xiaomi'}
+    { id: 1, name: 'iphone' },
+    { id: 2, name: 'samsung' },
+    { id: 3, name: 'xiaomi' }
 ];
 //find product have id = 2;
 let newProductsFind4 = productsFind4.find(product => product.id === 2);
@@ -448,9 +448,9 @@ console.log(newProductsFind4);
 //interview style
 console.log('find5');
 let emailsFind5 = [
-  'a@gmail.com',
-  'b@gmail.com',
-  'admin@gmail.com'
+    'a@gmail.com',
+    'b@gmail.com',
+    'admin@gmail.com'
 ];
 //find email have 'admin'
 let newEmailsFind5 = emailsFind5.find(email => {
@@ -468,9 +468,9 @@ console.log(resultArrSome1);
 //
 console.log('some2');
 let usersSome2 = [
-  {name: 'A', active: false},
-  {name: 'B', active: false},
-  {name: 'C', active: true}
+    { name: 'A', active: false },
+    { name: 'B', active: false },
+    { name: 'C', active: true }
 ];
 //check list users have user active
 let resultSome2 = usersSome2.some(user => user.active == true);
@@ -479,8 +479,8 @@ console.log(resultSome2);
 //
 console.log('some3');
 let usersSome3 = [
-  {email: 'admin@gmail.com'},
-  {email: 'test@gmail.com'}
+    { email: 'admin@gmail.com' },
+    { email: 'test@gmail.com' }
 ];
 //check list users have email user is 'admin@gmail.com'
 let resultSome3 = usersSome3.some(email => email.email === 'admin@gmail.com');
@@ -496,8 +496,8 @@ console.log(resultSome4);
 //
 console.log('some5');
 let cartSome5 = [
-  {name: 'iphone', quantity: 1},
-  {name: 'samsung', quantity: 0}
+    { name: 'iphone', quantity: 1 },
+    { name: 'samsung', quantity: 0 }
 ];
 //check cart product have quantity = 0
 let resultSome5 = cartSome5.some(cart => cart.quantity === 0);
@@ -523,11 +523,11 @@ console.log('reduce3');
 let arrReduce3 = [5, 10, 20, 30];
 //find number largest in array by reduce
 let resultReduce3 = arrReduce3.reduce((acc, num) => {
-    if(num > acc){
+    if (num > acc) {
         acc = num;
     }
     return acc;
-},0);
+}, 0);
 console.log(resultReduce3);
 
 //14
@@ -537,5 +537,66 @@ let arrReduce4 = [1, 2, 3, 4, 5];
 let lengthArrReduce4 = arrReduce4.reduce((acc, item) => {
     acc++;
     return acc;
-},0)
+}, 0)
 console.log(lengthArrReduce4);
+
+//Reduce normal
+//15
+console.log('reduce5');
+let wordsReduce5 = ['hello', 'world'];
+// Combine into 'hello world'
+let resultReduce5 = wordsReduce5.reduce((acc, word) => {
+    // return (acc + ' ' + word).trim();
+    return acc + ' ' + word;
+},);
+console.log(resultReduce5);
+
+//16
+console.log('reduce6');
+let numbersReduce6 = [1, 2, 3, 4, 5, 6, 8];
+//count number even
+let resultReduce6 = numbersReduce6.reduce((acc, num) => {
+    if (num % 2 === 0) {
+        acc++;
+    }
+    return acc;
+}, 0);
+console.log(resultReduce6);
+
+//17
+console.log('reduce7');
+let cartReduce7 = [
+    { name: 'iphone', price: 1000 },
+    { name: 'samsung', price: 800 }
+];
+//caculator the total amount
+let resultReduce7 = cartReduce7.reduce((acc, item) => {
+    acc += item.price;
+    return acc;
+}, 0);
+console.log(resultReduce7);
+
+//18 important
+console.log('reduce8');
+let arrReduce8 = ['a', 'b', 'a', 'c', 'b', 'a'];
+//count the number of occurences
+/*
+    {
+        a: 3,
+        b: 2,
+        c: 1
+    }
+*///occurrences: lần xuất hiện
+let resultReduce8 = arrReduce8.reduce((acc, num) => {
+    /*
+        nếu viết acc['...'] vào { } thì sẽ tạo ra key vd: {name: ...}
+        có thể sử dụng acc.name nhưng nếu acc.num trong bài này thì sẽ hiểu lầm thành {num:... }
+    */
+    if (!acc[num]) {
+        acc[num] = 0;
+    }
+    acc[num]++;
+    return acc;
+}, {});
+console.log(resultReduce8);
+
