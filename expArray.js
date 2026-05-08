@@ -689,4 +689,20 @@ let resultReduce13 = usersReduce13.reduce((acc, user) => {
 }, 'Email not current');
 console.log(resultReduce13);
 
-//
+//24 
+console.log('reduce14');
+let ordersReduce14 = [
+  {status: 'pending', amount: 100},
+  {status: 'done', amount: 200},
+  {status: 'done', amount: 300}
+];
+//total amount for status is done
+let resultReduce14 = ordersReduce14.reduce((acc, order) => {
+    if(order.status === 'done'){
+        acc += order.amount;
+    }
+    return acc;
+}, 0)
+console.log(resultReduce14);
+
+
