@@ -630,3 +630,16 @@ let resultReduce9 = usersReduce9.reduce((acc, item) => {
 }, {});
 console.log(resultReduce9);
 
+//20
+console.log('reduce10');
+let arrReduce10 = [[1,2], [3,4], [5]];
+//fatten array => [1,2,3,4,5] : làm phẳng mảng
+let resultReduce10 = arrReduce10.reduce((acc, num) => {
+    num.map(num => acc.push(num));
+    // num.forEach(item => {
+    //     return acc.push(item);
+    // })
+    return acc;
+}, []);
+console.log(resultReduce10);
+
