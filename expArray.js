@@ -600,3 +600,33 @@ let resultReduce8 = arrReduce8.reduce((acc, num) => {
 }, {});
 console.log(resultReduce8);
 
+//Reduce advanced
+//exp 19 group data
+console.log('reduce9');
+let usersReduce9 = [
+    { name: 'A', age: 20 },
+    { name: 'B', age: 20 },
+    { name: 'C', age: 22 }
+];
+/*
+    Group theo age:
+    {
+        20: [
+            {name:'A', age:20},
+            {name:'B', age:20}
+        ],
+        22: [
+            {name:'C', age:22}
+        ]
+    }
+*/
+let resultReduce9 = usersReduce9.reduce((acc, item) => {
+    if(!acc[item.age]){
+        acc[item.age] = [];
+    }
+    // acc[item.age] = item; nếu dùng cái này thì kết quả sẽ ghi đè lên vì nó là mảng nên mình phải push vào như bên dưới. :))
+    acc[item.age].push(item);
+    return acc;
+}, {});
+console.log(resultReduce9);
+
