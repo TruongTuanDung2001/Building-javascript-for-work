@@ -504,3 +504,38 @@ let resultSome5 = cartSome5.some(cart => cart.quantity === 0);
 console.log(resultSome5);
 
 // 🔥 REDUCE 🔥
+//11
+console.log('reduce1');
+let arrReduce1 = [1, 2, 3, 4, 5];
+//Total
+let resultReduct1 = arrReduce1.reduce((acc, num) => acc + num, 0);
+console.log(resultReduct1);
+
+//12
+console.log('reduce2');
+let arrReduce2 = [1, 2, 3, 4, 5];
+//multipication
+let resultReduce2 = arrReduce2.reduce((acc, num) => acc * num, 1);
+console.log(resultReduce2);
+
+//13
+console.log('reduce3');
+let arrReduce3 = [5, 10, 20, 30];
+//find number largest in array by reduce
+let resultReduce3 = arrReduce3.reduce((acc, num) => {
+    if(num > acc){
+        acc = num;
+    }
+    return acc;
+},0);
+console.log(resultReduce3);
+
+//14
+console.log('reduce4');
+let arrReduce4 = [1, 2, 3, 4, 5];
+//count length item not use length
+let lengthArrReduce4 = arrReduce4.reduce((acc, item) => {
+    acc++;
+    return acc;
+},0)
+console.log(lengthArrReduce4);
