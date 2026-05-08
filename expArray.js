@@ -653,4 +653,40 @@ let usersReduce11 = [
 //combine method: condition age large 20, total age || kq: 55
 let resultReduce11 = usersReduce11.filter(item => item.age > 18).reduce((acc, item) => acc + item.age, 0);
 console.log(resultReduce11);
+
+//Reduce 🔥 Interview
+//22
+console.log('reduce12');
+let cartReduce12 = [
+  {name: 'iphone', price: 1000, quantity: 2},
+  {name: 'airpod', price: 200, quantity: 3}
+];
+//total bill
+let resultReduce12 = cartReduce12.reduce((acc, item) => {
+    acc += item.price * item.quantity;
+    return acc;
+}, 0)
+console.log(resultReduce12);
+
+//23
+console.log('reduce13');
+let usersReduce13 = [
+  {email: 'admin@gmail.com', password: '123456'},
+  {email: 'test@gmail.com', password: 'abcdef'}
+];
+//check email exist, password current
+let emailInput = 'admin@gmail.com1';
+let passwordInput = '123456';
+let resultReduce13 = usersReduce13.reduce((acc, user) => {
+    if(user.email === emailInput){
+        if(user.password === passwordInput){
+            return 'Login success';
+        }
+        return 'Password not current';
+    }
+
+    return acc;
+}, 'Email not current');
+console.log(resultReduce13);
+
 //
