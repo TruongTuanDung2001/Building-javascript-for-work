@@ -73,3 +73,59 @@ function outer() {
 }
 
 outer();
+
+
+//CLOSURE: Là function nhớ được biến bên ngoài của nó, ngay cả khi function bên ngoài đã chạy xong
+console.log('Closure');
+
+//Sau khi chạy xong thì function tạo mới, vì num nằm bên trong function, kh có function con giữ lại 
+function count(){
+    let num = 0;
+    num++;
+    console.log(num);
+    return num;
+}
+
+count();
+count();
+count();
+
+function countClosure(){
+    let num = 0;
+    // num++; nếu để ngoài không để bên trong function con thì kh nhớ biến, khi làm sẽ quay lại từ đầu
+    return function(){
+
+        //num++; //nếu biến đổi biến trong hàm con, sẽ nhớ biến, mỗi khi gọi sẽ sử dụng lại 
+        console.log(num++);
+    }
+}
+//Chỗ này vẫn ra 1 vì tạo function => in ra chứ có lưu lại gì đâu mà đòi nó nhớ
+countClosure(); //1
+countClosure(); //1
+countClosure(); //1
+
+// phải tạo biến hứng cái function
+const fn = countClosure();
+fn(); //1
+fn(); //2
+fn(); //3
+
+/**
+     * countClosure()
+        ↓
+    tạo num = 0
+        ↓
+    return function
+        ↓
+    fn giữ closure
+        ↓
+    fn() dùng lại num cũcountClosure()
+        ↓
+    tạo num = 0
+        ↓
+    return function
+        ↓
+    fn giữ closure
+        ↓
+    fn() dùng lại num cũ
+ */
