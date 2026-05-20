@@ -1,0 +1,33 @@
+// DOM //
+// Lấy phần tử by id
+let lolGame = document.getElementById('lol');
+console.log(lolGame);
+
+//lấy phần tử by class
+let listGame = document.getElementsByClassName('list');
+console.log(listGame);
+console.log(typeof listGame);
+console.log(listGame[0]);
+
+
+let elementGame = document.getElementsByClassName('element');
+console.log(elementGame);
+console.log(typeof elementGame);
+console.log(elementGame[elementGame.length - 1]);
+
+elementGame[4].innerText = 'China Chess';
+// elementGame[4].innerText = '<a href="google.com.vn">Google</a>'; kq: <a href="google.com.vn">Google</a>
+elementGame[4].innerHTML = '<a href="google.com.vn">Google</a>';
+
+//Giờ có thẻ P chứa nội dung: nếu dùng innerText là thay nội dung thành 1 chuỗi kí tự, không nhận kiểu thẻ html vd: thẻ a ở trên
+// - nếu dùng innerHTML có thể thay đổi nội dung của thẻ p chứa nội dung chứa thẻ html - nhưng không hay đổi thẻ p, thẻ p vẫn ở ngoài chứa nội dung
+
+//nếu muốn thay đổi luôn hoàn toàn thẻ p thì dùng outerHTML
+elementGame[4].outerHTML = '<a class="element" href="google.com.vn">Google</a>';
+console.log(elementGame);
+
+
+
+
+
+

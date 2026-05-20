@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{
+        background: #444;
+        color: white;
+    }
+    .list{
+        background-color: brown;
+        text-align: center;
+    }
+    .list .element{
+        padding: 10px;
+    }
+    .list .element:hover {
+        background-color: #666;
+        cursor: pointer;
+    }
+</style>
 <body>
-    
+    <!--  -->
+    <div class="list">
+        <p class="element">Quyền Vương</p>
+        <p id="lol" class="element">Liên Minh Huyền Thoại</p>
+        <p class="element">GTA 5</p>
+        <p class="element">Project Zomeboid</p>
+        <p class="element">Cờ tướng</p>
+    </div>
 </body>
 <script src="dom.js"></script>
 </html>
