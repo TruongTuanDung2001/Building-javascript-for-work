@@ -129,3 +129,14 @@ fn(); //3
         ↓
     fn() dùng lại num cũ
  */
+
+//Arrow function
+function helloWorld(){
+    return console.log('Hello World ');
+}
+
+helloWorld();
+
+helloWorld2 = () => console.log('Hello World 2');
+
+helloWorld2();
