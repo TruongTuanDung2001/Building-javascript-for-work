@@ -26,7 +26,9 @@ elementGame[4].innerHTML = '<a href="google.com.vn">Google</a>';
 elementGame[4].outerHTML = '<a class="element" href="google.com.vn">Google</a>';
 console.log(elementGame);
 
-
+console.log(elementGame[5]);
+console.log(elementGame[5].textContent); //nó sẽ lấy tất cả nội dung trong thẻ cha ra, không lấy HTML nha, kể cả những thẻ đã ẩn rồi thì vẫn lấy ra bình thường.
+// elementGame[5].textContent = '<a class="element" href="google.com.vn">Minato</a>'; thay đổi kết quả giống như innerText
 
 
 
