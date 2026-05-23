@@ -31,5 +31,19 @@ console.log(elementGame[5].textContent); //nó sẽ lấy tất cả nội dung 
 // elementGame[5].textContent = '<a class="element" href="google.com.vn">Minato</a>'; thay đổi kết quả giống như innerText
 
 
+// || querySelector - querySelectorAll || //
+//Query selector trả về đối tượng đầu tiên lấy được
+let listQuery = document.querySelector('.list-query');
+console.log(listQuery);
+
+//Query selector all trả về tất cả đối tượng lấy được, mỗi đối tượng là nội dung và thẻ html lun (NodeList);
+let item = document.querySelectorAll('.item span'); //Có thể lấy đối tượng con của item trong nhiều item
+item[0].innerText = 'Đi chơi'
+console.log(item[0]);
+
+
+
+
+
 
 
