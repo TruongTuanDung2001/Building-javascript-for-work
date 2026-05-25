@@ -58,6 +58,29 @@ w3school.innerText = '[UNhiddenGem Mixtape] 3. Cho Con (Lullaby pt.2) - B Ray';
 let input = document.querySelector('.input');
 input.value = 'Trương Tuấn Dũng';
 
+// ||Style / classlist 
+let itemClass = document.querySelector('.item-class');
+let btnClassAdd = document.querySelector('.btn-classAdd');
+let btnClassRemove = document.querySelector('.btn-classRemove');
+let btnClassToggle = document.querySelector('.btn-classToggle');
+
+// Classlist add: thêm 1 class vào 1 thẻ Element
+btnClassAdd.addEventListener('click', function(){
+    itemClass.classList.add('bg-red');
+});
+
+// ClassList remove: xóa 1 class đã có trong Element ra khỏi Element
+btnClassRemove.addEventListener('click', () =>
+    itemClass.classList.remove('bg-red')
+);
+
+//ClassList toggle: thêm hoặc xóa 1 class ra khỏi Element, nếu có thì xóa, nếu kh có thì thêm vào
+btnClassToggle.addEventListener('click',
+    () => itemClass.classList.toggle('bg-red')
+)
+
+
+
 
 
 

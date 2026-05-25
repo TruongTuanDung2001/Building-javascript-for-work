@@ -57,8 +57,29 @@
     input{
         padding: 5px;
         font-size: 20px;
-        margin-top: 10px;
+        margin: 10px;
     }
+
+    /* CLASSLIST */
+    .classList{
+        text-align: center;
+        background: #000;
+    }
+    .classList .item-class{
+        font-size: 20px;
+        /* background: red; */
+        padding: 10px;
+    }
+    .classList .btn-classAdd,
+    .classList .btn-classRemove,
+    .classList .btn-classToggle {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .bg-red{
+        background: red;
+    }
+
   </style>
   <body>
     <!--  -->
@@ -101,6 +122,16 @@
       <!-- input -->
       <input type="text" class="input" value="Nguyen Van A" placeholder="Enter yours name">
     </div>
+
+    <!-- Classlist -->
+     <div class="classList">
+        <div class="item-class">
+            Hãy sửa đổi em đi !!!
+        </div>
+        <button class="btn-classAdd">Add</button>
+        <button class="btn-classRemove">Remove</button>
+        <button class="btn-classToggle">Toggle</button>
+     </div>
   </body>
   <script src="dom.js"></script>
 </html>
