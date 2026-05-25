@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+      background-color: #333;
+      border: 3px solid rgb(141, 171, 23);
+    }
+    .active {
+      background: red;
+    }
+  </style>
   <body>
     <div class="expDom">
       <!-- Bài 1 -->
@@ -14,6 +25,15 @@
       <!-- Bài 2 -->
       <p class="text">Hello DOM</p>
       <button class="btn-changeColor">Red</button>
+
+      <!-- Bài 3 -->
+      <div class="box"></div>
+      <button class="toggle">Toggle</button>
+
+      <!-- Bài 4 -->
+      <input id="name" />
+      <button class="btn-show">Show</button>
+      <p id="input-value"></p>
     </div>
   </body>
   <script src="expDom.js"></script>

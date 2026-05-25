@@ -16,3 +16,19 @@ btnChangeColor.addEventListener('click', function(){
 });
 
 //Bài 3: Toggle class
+let box = document.querySelector('.box');
+let btnToggle = document.querySelector('.toggle');
+btnToggle.addEventListener('click', function(){
+    box.classList.toggle('active');
+});
+
+//Bài 4: Get input value
+let name = document.getElementById('name');
+let btnShow = document.querySelector('.btn-show');
+let inputValue = document.getElementById('input-value');
+
+btnShow.addEventListener('click', function(){
+    if(name.value !== 0){
+        inputValue.textContent = name.value;
+    }
+}); 
