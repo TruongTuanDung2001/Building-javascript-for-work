@@ -45,3 +45,22 @@ btnShowPassWord.addEventListener('click', function(){
         passWord.type = 'password';
     }
 });
+
+// || 2. INTERMEDIATE DOM (gần web thật) || //
+// Bai 6: Couter App
+let num = document.getElementById('num');
+let btnIncrease = document.getElementById('btn-increase');
+let btnDecrease = document.getElementById('btn-decrease');
+let btnReset = document.getElementById('btn-reset');
+
+btnIncrease.addEventListener('click', function(){
+    num.innerText = Number(num.innerText) + 1; //Chuyen sang number, không ++ được vì Number() đang là 1 object
+});
+
+btnDecrease.addEventListener('click', function(){
+    num.innerText = Number(num.innerText) - 1; //Chuyen sang number, không -- được vì Number() đang là 1 object
+});
+
+btnReset.addEventListener('click', function(){
+    num.innerText = 0;
+});
