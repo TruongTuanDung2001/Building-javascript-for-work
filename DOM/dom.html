@@ -54,32 +54,36 @@
       height: 300px;
       /* width: 300px; */
     }
-    input{
-        padding: 5px;
-        font-size: 20px;
-        margin: 10px;
+    input {
+      padding: 5px;
+      font-size: 20px;
+      margin: 10px;
     }
 
     /* CLASSLIST */
-    .classList{
-        text-align: center;
-        background: #000;
+    .classList {
+      text-align: center;
+      background: #000;
     }
-    .classList .item-class{
-        font-size: 20px;
-        /* background: red; */
-        padding: 10px;
+    .classList .item-class {
+      font-size: 20px;
+      /* background: red; */
+      padding: 10px;
     }
     .classList .btn-classAdd,
     .classList .btn-classRemove,
     .classList .btn-classToggle {
-        font-size: 20px;
-        padding: 10px;
+      font-size: 20px;
+      padding: 10px;
     }
-    .bg-red{
-        background: red;
+    .bg-red {
+      background: red;
     }
 
+    .change-element{
+     background: brown;
+     border: 3px solid #fff
+    }
   </style>
   <body>
     <!--  -->
@@ -120,18 +124,33 @@
         <a class="w3school" href="https://www.w3schools.com/">W3schools</a>
       </div>
       <!-- input -->
-      <input type="text" class="input" value="Nguyen Van A" placeholder="Enter yours name">
+      <input
+        type="text"
+        class="input"
+        value="Nguyen Van A"
+        placeholder="Enter yours name"
+      />
     </div>
 
     <!-- Classlist -->
-     <div class="classList">
-        <div class="item-class">
-            Hãy sửa đổi em đi !!!
-        </div>
-        <button class="btn-classAdd">Add</button>
-        <button class="btn-classRemove">Remove</button>
-        <button class="btn-classToggle">Toggle</button>
-     </div>
+    <div class="classList">
+      <div class="item-class">Hãy sửa đổi em đi !!!</div>
+      <button class="btn-classAdd">Add</button>
+      <button class="btn-classRemove">Remove</button>
+      <button class="btn-classToggle">Toggle</button>
+    </div>
+
+    <!-- Create / remove element
+      createElement()
+      appendChild()
+      append()
+      prepend()
+      remove() 
+     -->
+    <div class="change-element">
+      <h1>Element</h1>
+    </div>
+
   </body>
   <script src="dom.js"></script>
 </html>

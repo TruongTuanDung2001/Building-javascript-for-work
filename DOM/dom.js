@@ -65,7 +65,7 @@ let btnClassRemove = document.querySelector('.btn-classRemove');
 let btnClassToggle = document.querySelector('.btn-classToggle');
 
 // Classlist add: thêm 1 class vào 1 thẻ Element
-btnClassAdd.addEventListener('click', function(){
+btnClassAdd.addEventListener('click', function () {
     itemClass.classList.add('bg-red');
 });
 
@@ -80,6 +80,18 @@ btnClassToggle.addEventListener('click',
 )
 
 
+/**
+ * Create / remove element
+ * createElement()
+ * appendChild()
+ * append()
+ * nprepend()
+ * remove()
+ */
+let element = document.querySelector('.change-element');
+let div = document.createElement('div'); //tạo thôi chưa xuất ra
+div.innerText = 'Nếu anh đã biết trước ngày hôm đó, anh đã vượt hết tất cả giông gió.'
+element.appendChild(div);
 
 
 

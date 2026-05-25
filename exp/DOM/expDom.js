@@ -64,3 +64,5 @@ btnDecrease.addEventListener('click', function(){
 btnReset.addEventListener('click', function(){
     num.innerText = 0;
 });
+
+// Bài 7: 
