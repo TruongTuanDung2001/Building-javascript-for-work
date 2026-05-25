@@ -65,4 +65,40 @@ btnReset.addEventListener('click', function(){
     num.innerText = 0;
 });
 
-// Bài 7: 
+// Bài 7:
+let list = document.getElementById('list');
+let inputTask = document.querySelector('.inputTask');
+let btnAddTask = document.querySelector('.btn-addTask');
+
+let resultList = document.querySelector('.resultList');
+
+
+btnAddTask.addEventListener('click', function(){
+    //box chua task
+    let taskBox = document.createElement('div');
+
+    //noi dung task
+    let itemList = document.createElement('p');
+    itemList.innerText = inputTask.value;
+
+    //button xoa task
+    let btnRemoveTask = document.createElement('button');
+    btnRemoveTask.innerText = 'remove';
+
+    btnRemoveTask.addEventListener('click', function(){
+        taskBox.remove();
+    });
+
+    taskBox.append(itemList, btnRemoveTask);
+    resultList.append(taskBox);
+
+    inputTask.value = '';
+});
+/**
+ * Mỗi lần tạo ra 1 task thì giống như tạo ra 1 cái hộp v, ứng dụng của closure hàm chạy rồi vẫn nhớ biến scope cha.
+ * Ví dụ task 1 chạy, tạo ra 1 task và 1 nút chứa function xóa cái task tổng bên ngoài
+ * khi tạo nó sẽ nhớ cái task tổng đó và lưu vào bộ nhớ
+ * nên khi chạy nhiều task thì mỗi task điều nhớ 1 cái task bự của nó như mỗi cái hộp tạo ra thì phần tử trong hộp chỉ là của hộp đó thôi
+ * nên là khi xóa vẫn có thể xóa task đúng ngay vị trí đó
+ * nhớ khai báo biến bên trong khi bấm nút tạo task
+ */
