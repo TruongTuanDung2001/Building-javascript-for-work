@@ -38,10 +38,25 @@ console.log(listQuery);
 
 //Query selector all trả về tất cả đối tượng lấy được, mỗi đối tượng là nội dung và thẻ html lun (NodeList);
 let item = document.querySelectorAll('.item span'); //Có thể lấy đối tượng con của item trong nhiều item
-item[0].innerText = 'Đi chơi'
+item[0].innerText = 'Đi chơi';
 console.log(item[0]);
 
 
+// Change properties 
+// IMAGE
+let changeProperties = document.querySelector('.change-properties');
+let image = document.querySelectorAll('.image');
+image[1].src = './img/3.jpg';
+console.log(image);
+
+// a.href
+let w3school = document.querySelector('.w3school');
+w3school.href = 'https://www.youtube.com/watch?v=ERABWON9Qck&list=RDERABWON9Qck&start_radio=1';
+w3school.innerText = '[UNhiddenGem Mixtape] 3. Cho Con (Lullaby pt.2) - B Ray';
+
+//input
+let input = document.querySelector('.input');
+input.value = 'Trương Tuấn Dũng';
 
 
 
