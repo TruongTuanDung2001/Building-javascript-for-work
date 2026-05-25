@@ -32,3 +32,16 @@ btnShow.addEventListener('click', function(){
         inputValue.textContent = name.value;
     }
 }); 
+
+// Bai 5: Hide / Show password
+let passWord = document.querySelector('.passWord');
+let btnShowPassWord = document.querySelector('.btn-ShowPassWord');
+
+btnShowPassWord.addEventListener('click', function(){
+    if(passWord.type == 'password'){
+        passWord.type = 'text';
+    }
+    else{
+        passWord.type = 'password';
+    }
+});
