@@ -85,19 +85,27 @@ btnClassToggle.addEventListener('click',
  * createElement()
  * appendChild()
  * append()
- * nprepend()
+ * prepend()
  * remove()
  */
 // Create / appendChild
 let element = document.querySelector('.change-element');
 let div = document.createElement('div'); //tạo thôi chưa xuất ra
 div.innerText = 'Nếu anh đã biết trước ngày hôm đó, anh đã vượt hết tất cả giông gió.'
-element.appendChild(div); //Thêm element mới tạo vào 1 element có sẵn
+element.appendChild(div); //Thêm element mới tạo vào 1 element có sẵn, không thể thêm text nha
 
 // Append
 element.append(div); //không thể thêm vào vì nó sẽ thêm vào phần tử cuối mà ở trên đã thêm div rồi nên nó không nhận nữa, nên nếu muốn thêm mới thì phải tạo mới 1 element mới nha.
 element.append('Anh thì vẫn thế, vẫn yêu nhạc. ', 'Vẫn luôn bình yên xen lẫn phiêu bạc'); //Thêm phần tử vào cuối, có thể thêm nhiều phần tử hơn appendChild
 
+// Perpend
+let a = document.createElement('a');
+let span = document.createElement('span');
+span.innerText = 'Lúc nhỏ ';
+a.innerText = 'Em xóa instagam rồi';
+a.href = 'shit';
+element.prepend(a,' Chỉ là không muốn nhìn thấy người kia bên ai khác. ', 'Lừa tao lần 2 chẳng thể trách được ai'); //Có thể thêm text, thêm nhiều phần tử 1 lần
+element.prepend(span);//thêm phần tử vào đầu element
 
 
 
