@@ -55,3 +55,16 @@ let select = document.getElementById('select');
 select.addEventListener('change', function(e){
     console.log(e.target.value); //sau khi option thay đổi thì mới chạy 
 });
+
+// KeyUp / KeyDown
+let inputUpDown = document.querySelector('.upDown');
+//up
+inputUpDown.addEventListener('keyup', (e) => console.log(e.key));//Mình nhấn phím xuống, khi nào bỏ ngón tay ra, phím bất lên thì chạy cái đó
+//e.key là xuất cái key(nút bấm) vừa mới bấm
+
+//down
+inputUpDown.addEventListener('keydown', (e) => console.log(e.key));
+// nhấn phím xuống là nhận
+
+
+
