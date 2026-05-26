@@ -43,3 +43,15 @@ let list = document.querySelector('.list');
 list.addEventListener('click', function(e){ //e là các thẻ li con trong thẻ ul cha, nên gán sự kiện cho thẻ cha thì khi e.target click tức là thẻ con li được click. Thẻ nào click thì show nội dung thẻ đó ra, không cần thêm mối thẻ con li 1 addEventListener làm gì
     console.log(e.target.textContent);
 });
+
+// Change
+// vd1:
+let inputChange = document.getElementById('input-change');
+inputChange.addEventListener('change', (e) => console.log(e.target.value)); //khi bấm dữ liệu vào input, sau đó click chuột ra ngoài thì nó mới chạy.
+//Change chạy khi kết quả xong, được xác nhận thì mới chạy sự kiện
+
+//vd2:
+let select = document.getElementById('select');
+select.addEventListener('change', function(e){
+    console.log(e.target.value); //sau khi option thay đổi thì mới chạy 
+});
