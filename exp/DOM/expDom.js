@@ -102,3 +102,25 @@ btnAddTask.addEventListener('click', function(){
  * nên là khi xóa vẫn có thể xóa task đúng ngay vị trí đó
  * nhớ khai báo biến bên trong khi bấm nút tạo task
  */
+
+// Bài 8: Search Filter
+let data = ['Dung', 'An', 'Minh', 'Long'];
+let inputText = document.getElementById('inputText');
+let resultSearchFilter = document.querySelector('.resultSearchFilter');
+inputText.addEventListener('input', function(){
+    let keyword = inputText.value;
+    let result = data.filter(item => {
+        return item.toLowerCase().includes(keyword.toLowerCase());//Khi nào true thì filter mới trả về phần tử đó vào 1 mảng mới
+    });
+    console.log(result);
+    render(result); //render ra kết quả trả về danh sách những user true
+})
+function render(data){
+    resultSearchFilter.innerHTML = ''; //Xóa nội dung con bên trong, thẻ cha ul vẫn còn, chỉ xóa cái text Result: thôi
+    //nếu xóa thẻ đó luôn thì phải dùng remove
+    data.forEach(user => {
+        resultSearchFilter.innerHTML += `<li>${user}</li>` //thêm vào thẻ ul danh sách thẻ li user của data
+    });
+}
+render(data); //render ra danh sách ban đầu
+
