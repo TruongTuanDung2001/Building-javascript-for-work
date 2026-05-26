@@ -10,3 +10,12 @@ inputEvent.addEventListener('input', function(e){ // e là biến phát sinh ra 
     console.log(e.target.value);
 });
 
+//Submit
+let formSubmit = document.getElementById('form-submit');
+let inputSubmit = document.querySelector('.input-submit');
+let btnSubmit = document.getElementById('btn-submit');
+
+formSubmit.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('Submited !!!');
+});
