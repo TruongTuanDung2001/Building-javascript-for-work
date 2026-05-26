@@ -112,5 +112,37 @@ span.remove(); //xóa element đó ra khỏi HTML
 a.remove();
 
 
+/**
+ * Di chuyển trong DOM / di chuyển - thay đổi cây thư mục
+ * parentNode
+ * children
+ * nextElementSibling
+ * previousElementSibling
+ * closest()
+ */
+// ParentNode
+let active = document.querySelector('.active'); //Lấy Element con
+console.log(active.parentNode); //xuất ra Element cha từ Element con
+//vd: nếu click và xóa hết 1 task, active.parentNode.remove();
+
+// Children
+let listTraversing = document.querySelector('.list-traversing'); //lấy element cha
+console.log(listTraversing.children); // xuất tất cả các element con chứa trong thẻ cha
+
+//nextElementSibling
+console.log(active.nextElementSibling); //lấy element kế của nó, cùng cấp
+
+//previousElementSibling
+console.log(active.previousElementSibling); //lấy element trước nó, cùng cấp
+
+//closest
+let btnDelete = document.querySelector('.btn-delete')
+console.log(btnDelete.closest('.list-traversing')); //lấy ra phần tử cha gần nhất có class
+console.log(btnDelete.closest('.traversing')); //lấy xa cũng được luôn, nhưng phải là cha của phần tử đó
+//Nó khác với parentNode vì nó có thể truy xuất xa còn parentNode thì chỉ 1 cấp thôi.
+
+
+
+
 
 
