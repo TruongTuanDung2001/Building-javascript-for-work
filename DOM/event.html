@@ -1,75 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    body{
-        background: #000;
-        color: #fff;
-        font-size: 25px;
-        text-align: center;
+  </head>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-size: 25px;
+      text-align: center;
     }
-    button, input{
-        font-size: 25px;
-        padding: 6px;
+    button,
+    input {
+      font-size: 25px;
+      padding: 6px;
     }
-    ul, li{
-        list-style: none;
+    ul,
+    li {
+      list-style: none;
     }
-</style>
-<body>
+  </style>
+  <body>
     <!-- DOM EVENT JAVASCRIPT -->
-     <div class="domEvent">
-        <!-- Click event -->
-        <button id="btn-clickEvent">Click</button>
+    <div class="domEvent">
+      <!-- Click event -->
+      <button id="btn-clickEvent">Click</button>
 
-        <!-- Input event -->
-         <br>
-         <input type="text" id="input-Event">
+      <!-- Input event -->
+      <br />
+      <input type="text" id="input-Event" />
 
-         <!-- Submit event -->
-         <br>
-         <form action="" id="form-submit">
-            <input type="text" class="input-submit">
-            <button type="submit" id="btn-submit">Submit</button>
-         </form>
+      <!-- Submit event -->
+      <br />
+      <form action="" id="form-submit">
+        <input type="text" class="input-submit" />
+        <button type="submit" id="btn-submit">Submit</button>
+      </form>
 
-         <!-- Bubbling: Sủi bọt -->
-         <div class="box" id="parent">
-            <button id="child">Child</button>
-         </div>
+      <!-- Bubbling: Sủi bọt -->
+      <div class="box" id="parent">
+        <button id="child">Child</button>
+      </div>
 
-         <!-- Delegation -->
-          <ul class="list">
-            <li class="item">Honda</li>
-            <li class="item">Yamaha</li>
-            <li class="item">Huyndai</li>
-            <li class="item">Suzuki</li>
-            <li class="item">Martin 007</li>
-          </ul>
+      <!-- Delegation -->
+      <ul class="list">
+        <li class="item">Honda</li>
+        <li class="item">Yamaha</li>
+        <li class="item">Huyndai</li>
+        <li class="item">Suzuki</li>
+        <li class="item">Martin 007</li>
+      </ul>
 
-          <!-- Change -->
-           <div class="change">
-            <input type="text" id="input-change">
-            <select name="Select" id="select">
-                <option value="truongtuandung">Trương Tuấn Dũng</option>
-                <option value="leeminhoo">Lee Min Hoo</option>
-                <option value="songoku">Son Go Ku</option>
-            </select>
-           </div>
+      <!-- Change -->
+      <div class="change">
+        <input type="text" id="input-change" />
+        <select name="Select" id="select">
+          <option value="truongtuandung">Trương Tuấn Dũng</option>
+          <option value="leeminhoo">Lee Min Hoo</option>
+          <option value="songoku">Son Go Ku</option>
+        </select>
+      </div>
 
-           <!-- keyUp / keyDown -->
-            <div class="key">
-                <input type="text" class="upDown">
-            </div>
+      <!-- keyUp / keyDown -->
+      <div class="key">
+        <input type="text" class="upDown" />
+      </div>
 
-            <!-- focus / blur -->
-                <h3>FOCUS BLUR</h3>
-             <input type="text" class="focusBlur">
-     </div>
-</body>
-<script src="event.js"></script>
+      <!-- focus / blur -->
+      <h3>FOCUS BLUR</h3>
+      <input type="text" class="focusBlur" />
+
+      <!-- Currnent Target -->
+       <div class="list-box">
+            <h3>LIST BOX</h3>
+            <div class="itemList">Trương</div>
+            <div class="itemList">Tuấn</div>
+            <div class="itemList">Dũng</div>
+       </div>
+    </div>
+  </body>
+  <script src="event.js"></script>
 </html>

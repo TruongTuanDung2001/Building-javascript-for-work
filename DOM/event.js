@@ -73,7 +73,14 @@ let focusBlur = document.querySelector('.focusBlur'); //là thẻ input
 focusBlur.addEventListener('focus', (e) => console.log(e.target.value)); //Click vô thẻ input, focus thẻ input thì chạy
 focusBlur.addEventListener('blur', (e) => console.log(e.target.value)); //Không bên trong thẻ input nữa thì chạy, click chuột ra bên ngoài
 
+// E.EVENT
+let listBox = document.querySelector('.list-box');
+listBox.addEventListener('click', function(e){
+    console.log(e.target.innerText);//là con của thằng cha đang addEvent
+    console.log(e.currentTarget.innerHTML);//chính là cái thằng đang addEvent
+});
 
+//e.target.checked: trạng thái check box chắc của radio box
 
 
 
