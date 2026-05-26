@@ -144,3 +144,24 @@ inputCharater.addEventListener('input', function () {
     }
     //
 });
+
+//Bài 10: Dark Mode
+let body = document.getElementById('body');
+let btnDarkMode = document.querySelector('.btn-darkMode');
+
+btnDarkMode.addEventListener('click', function () {
+    let dark = document.createElement('div');
+    dark.classList.add('dark'); //tạo 1 cái div để thêm vào thẻ body
+    //
+    body.classList.toggle('dark'); //thêm / xóa thẻ dark
+    //
+    if (body.classList.contains('dark')){ //kiếm tra tồn tại thì thay đổi thuộc tính thẻ body
+        body.style.background = '#000';
+        body.style.color = '#fff';
+    }
+    else{
+        body.style.background = '#fff';
+        body.style.color = '#000';
+    }
+    //Cách 2 là kh cần if ở trên, chỉ cần thêm toggle .dark nhưng bên css phải style thẻ .dark các thuộc tính css
+});
