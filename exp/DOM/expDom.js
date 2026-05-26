@@ -3,7 +3,7 @@
 let title = document.getElementById('title');
 let btnChangeText = document.querySelector('.btn-changeText');
 
-btnChangeText.addEventListener('click', function(){
+btnChangeText.addEventListener('click', function () {
     title.innerText = 'Welcome Dung';
 });
 
@@ -11,14 +11,14 @@ btnChangeText.addEventListener('click', function(){
 let text = document.querySelector('.text');
 let btnChangeColor = document.querySelector('.btn-changeColor');
 
-btnChangeColor.addEventListener('click', function(){
+btnChangeColor.addEventListener('click', function () {
     text.style.color = 'red';
 });
 
 //Bài 3: Toggle class
 let box = document.querySelector('.box');
 let btnToggle = document.querySelector('.toggle');
-btnToggle.addEventListener('click', function(){
+btnToggle.addEventListener('click', function () {
     box.classList.toggle('active');
 });
 
@@ -27,21 +27,21 @@ let name = document.getElementById('name');
 let btnShow = document.querySelector('.btn-show');
 let inputValue = document.getElementById('input-value');
 
-btnShow.addEventListener('click', function(){
-    if(name.value !== 0){
+btnShow.addEventListener('click', function () {
+    if (name.value !== 0) {
         inputValue.textContent = name.value;
     }
-}); 
+});
 
 // Bai 5: Hide / Show password
 let passWord = document.querySelector('.passWord');
 let btnShowPassWord = document.querySelector('.btn-ShowPassWord');
 
-btnShowPassWord.addEventListener('click', function(){
-    if(passWord.type == 'password'){
+btnShowPassWord.addEventListener('click', function () {
+    if (passWord.type == 'password') {
         passWord.type = 'text';
     }
-    else{
+    else {
         passWord.type = 'password';
     }
 });
@@ -53,15 +53,15 @@ let btnIncrease = document.getElementById('btn-increase');
 let btnDecrease = document.getElementById('btn-decrease');
 let btnReset = document.getElementById('btn-reset');
 
-btnIncrease.addEventListener('click', function(){
+btnIncrease.addEventListener('click', function () {
     num.innerText = Number(num.innerText) + 1; //Chuyen sang number, không ++ được vì Number() đang là 1 object
 });
 
-btnDecrease.addEventListener('click', function(){
+btnDecrease.addEventListener('click', function () {
     num.innerText = Number(num.innerText) - 1; //Chuyen sang number, không -- được vì Number() đang là 1 object
 });
 
-btnReset.addEventListener('click', function(){
+btnReset.addEventListener('click', function () {
     num.innerText = 0;
 });
 
@@ -73,7 +73,7 @@ let btnAddTask = document.querySelector('.btn-addTask');
 let resultList = document.querySelector('.resultList');
 
 
-btnAddTask.addEventListener('click', function(){
+btnAddTask.addEventListener('click', function () {
     //box chua task
     let taskBox = document.createElement('div');
 
@@ -85,7 +85,7 @@ btnAddTask.addEventListener('click', function(){
     let btnRemoveTask = document.createElement('button');
     btnRemoveTask.innerText = 'remove';
 
-    btnRemoveTask.addEventListener('click', function(){
+    btnRemoveTask.addEventListener('click', function () {
         taskBox.remove();
     });
 
@@ -107,7 +107,7 @@ btnAddTask.addEventListener('click', function(){
 let data = ['Dung', 'An', 'Minh', 'Long'];
 let inputText = document.getElementById('inputText');
 let resultSearchFilter = document.querySelector('.resultSearchFilter');
-inputText.addEventListener('input', function(){
+inputText.addEventListener('input', function () {
     let keyword = inputText.value;
     let result = data.filter(item => {
         return item.toLowerCase().includes(keyword.toLowerCase());//Khi nào true thì filter mới trả về phần tử đó vào 1 mảng mới
@@ -115,7 +115,7 @@ inputText.addEventListener('input', function(){
     console.log(result);
     render(result); //render ra kết quả trả về danh sách những user true
 })
-function render(data){
+function render(data) {
     resultSearchFilter.innerHTML = ''; //Xóa nội dung con bên trong, thẻ cha ul vẫn còn, chỉ xóa cái text Result: thôi
     //nếu xóa thẻ đó luôn thì phải dùng remove
     data.forEach(user => {
@@ -124,3 +124,23 @@ function render(data){
 }
 render(data); //render ra danh sách ban đầu
 
+//Bài 9: Charater Couter
+let inputCharater = document.getElementById('inputCharater');
+let lengthCharater = document.getElementById('lengthCharater');
+
+inputCharater.addEventListener('input', function () {
+    if (inputCharater.value.length > 50) {
+        inputCharater.value = inputCharater.value.slice(0, 50);//cắt và lấy phần tử trong textArea từ vị trí 0 đến vị trí 50, không cho nhập thêm nữa, có nhập thêm thì nó cũng cắt tới phần tử 50 thôi
+        //vd textArea = "Hello js" => slice(0, 4) = "Hell";
+    }
+    //
+    let lengthInput = inputCharater.value.length;
+    lengthCharater.innerText = `${lengthInput}/50`;
+    //
+    if (lengthInput >= 40) {
+        lengthCharater.style.color = 'red';
+    } else {
+        lengthCharater.style.color = 'black';
+    }
+    //
+});
