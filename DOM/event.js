@@ -66,5 +66,14 @@ inputUpDown.addEventListener('keyup', (e) => console.log(e.key));//Mình nhấn 
 inputUpDown.addEventListener('keydown', (e) => console.log(e.key));
 // nhấn phím xuống là nhận
 
+// Focus / Blur
+let focusBlur = document.querySelector('.focusBlur'); //là thẻ input
+
+//
+focusBlur.addEventListener('focus', (e) => console.log(e.target.value)); //Click vô thẻ input, focus thẻ input thì chạy
+focusBlur.addEventListener('blur', (e) => console.log(e.target.value)); //Không bên trong thẻ input nữa thì chạy, click chuột ra bên ngoài
+
+
+
 
 
