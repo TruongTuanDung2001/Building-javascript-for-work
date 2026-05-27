@@ -52,3 +52,30 @@ debounceSearch.addEventListener('input', function(e){
         console.log(e.target.value);
     },500)
 });
+
+//Local Storage / Session Storage
+localStorage.setItem('name', 'dung');// thêm dữ liệu: 'name' là key, 'dung' là value
+localStorage.setItem('favorite', 'Football'); // y như trên, chú ý key chỉ có 1 nha
+let data = localStorage.getItem('name');//lấy dữ liệu của key = 'name'
+console.log(data);
+// localStorage.removeItem('');//xóa key trong '' remove
+// localStorage.clear(); //xóa toàn bộ dữ liệu
+
+
+//session storage
+sessionStorage.setItem('user', 'lee min hoo');
+
+//lưu object
+let user = {
+    id: 1,
+    name: 'Truong Tuan Dung',
+    age: 25,
+}
+
+localStorage.setItem('user', JSON.stringify(user));//chỉ lưu value là sring thôi, nên phải biến đổi thành chuỗi string
+
+let getUser = localStorage.getItem('user');// lấy dữ liệu từ key {..., ..., ...} nó là 1 string dài
+let newUser = JSON.parse(getUser); //chuyển đổi cái string dài đó thành object ban đầu
+console.log( newUser);
+console.log( newUser.name); //sử dụng object bình thường
+console.log(typeof newUser);
