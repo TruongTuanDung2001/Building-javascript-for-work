@@ -82,7 +82,7 @@ console.log(typeof newUser);
 
 //exp local / session
 let btnMode = document.getElementById('btn-mode');
-let mode = localStorage.setItem('mode', '#000');
+let mode = localStorage.setItem('mode', '#fff');
 let body = document.getElementById('body');
 let background = localStorage.getItem('mode');
 body.style.background = background;
@@ -98,6 +98,69 @@ btnMode.addEventListener('click', function () {
     }
     body.style.background = background;
     console.log(background);
-
 });
 
+// Exp to do list
+let inputTask = document.getElementById('inputTask');
+let btnAddTask = document.querySelector('.btn-add');
+let btnRemoveTask = document.querySelector('.btn-remove');
+let list = document.querySelector('ul.list');
+let tasks = [];
+
+btnAddTask.addEventListener('click', function (e) {
+    if (inputTask.value.trim() != 0) {//lấy dữ liệu
+        //lưu vào local
+        let task = { //tạo dữ liệu gồm id là date, task name là input value
+            id: Date.now(),
+            taskName: inputTask.value,
+        }
+        tasks.push(task); //thêm vào mảng
+        //
+        localStorage.setItem('tasks', JSON.stringify(tasks));//thêm vào local
+
+        //render
+        renderTask();//xuất ra màn hình
+
+    } else {
+        console.log('No data');
+    }
+});
+
+function renderTask() {
+    list.innerHTML = '';//ul list = rỗng
+    //render
+    tasks.forEach(task =>{ //duyệt mảng tasks có bnh phần tử rồi load ra
+        list.innerHTML += `
+            <li class="item">
+                ID:${task.id}
+                Task name: ${task.taskName};
+                <button class="btn-remove" data-id="${task.id}">Remove task</button> 
+            </li>`; //quan trọng là button có cái data-id đó để truy xuất e.target.dataset để kiểm tra id để xóa
+    })
+    
+}
+
+list.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-remove')) {
+        let id = Number(e.target.dataset.id);//lấy cái id task trong button: data-id ="task.id";
+        console.log(id);
+        
+        tasks = tasks.filter(task => task.id != id); //phải tạo ra mảng mới, lọc id nào giống thì bỏ, kh giống thì lấy
+        
+        localStorage.setItem('tasks', JSON.stringify(tasks));//gán lại dữ liệu mới lọc vào local
+        renderTask();
+
+        // e.target.parentElement.remove();
+        console.log('Remove task success !!!');
+    } else {
+        console.log('Click sai chỗ òiiiii');
+    }
+});
+
+//hiện dữ liệu ban đầu
+let dataTask = localStorage.getItem('tasks'); //lấy dữ liệu trong local
+if(dataTask){ //nếu có thì gán cái mảng tasks lúc đầu vô và render ra
+    tasks = JSON.parse(dataTask);
+    renderTask();
+    console.log(dataTask);
+}
