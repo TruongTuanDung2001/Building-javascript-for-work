@@ -164,3 +164,13 @@ if(dataTask){ //nếu có thì gán cái mảng tasks lúc đầu vô và render
     renderTask();
     console.log(dataTask);
 }
+
+
+//Exp form daft
+let inputDaft = document.querySelector('.inputDaft');
+let resultInput = document.querySelector('.resultInput');
+
+inputDaft.addEventListener('input', function(){
+    localStorage.setItem('userInput', inputDaft.value);
+    resultInput.innerText = localStorage.getItem('userInput');
+});
