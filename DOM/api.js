@@ -51,4 +51,32 @@ orderFood()
         console.log(food);
     })
 
+//exp promise
+// tạo promise sau 2 giây trả về 'Hello world'
+let promiseE1 = new Promise((rs, rj) => {
+    setTimeout(() => {
+        rs('Hello World');
+    }, 2000);
+});
 
+promiseE1
+    .then((rs) => {
+        console.log(rs);
+    });
+console.log(typeof promiseE1);
+
+//nếu số > 5 => resolve else reject
+let num = 6;
+let promiseE2 = new Promise((rs, rj) => {
+    if(num > 5){
+        rs('Number larger five');
+    }else{ rj('Number smaller five '); }
+});
+
+promiseE2
+    .then((rs) => {
+        console.log(rs);
+    })
+    .catch((rj) => {
+        console.log(rj);
+    })
