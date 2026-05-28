@@ -157,3 +157,16 @@ async function test(){
 }
 test(); //OK
 
+//Fetch API
+//https://jsonplaceholder.typicode.com/users
+async function getUserAPI(){
+    try{
+        let res = await fetch('https://jsonplaceholder.typicode.com/users');
+        let data = await res.json();
+        console.log(data);
+    }catch(error){
+        console.log(error);
+    }
+}
+
+getUserAPI();
