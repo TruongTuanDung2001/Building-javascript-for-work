@@ -130,3 +130,30 @@ promiseE2
 // }
 
 // test();
+
+//Exp async/await
+//Tạo hàm delay 3 giây rồi log: 'Done'
+function delay(){
+    return new Promise((rs, rj) => {
+        setTimeout(() => {
+            rs('Done');
+        },2000)
+    });
+}
+
+//Cách 1: không dùng async
+delay() 
+    .then((rs) => console.log(rs))
+    .catch((rj) => console.log(rj))
+
+//Cách 2: dùng async
+async function test(){
+    try {
+        let resultDelay = await delay();
+        console.log(resultDelay);
+    } catch (error) {
+        console.log('error');
+    }
+}
+test(); //OK
+
