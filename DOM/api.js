@@ -161,12 +161,28 @@ test(); //OK
 //https://jsonplaceholder.typicode.com/users
 async function getUserAPI(){
     try{
-        let res = await fetch('https://jsonplaceholder.typicode.com/users');
-        let data = await res.json();
-        console.log(data);
+        let res = await fetch('https://jsonplaceholder.typicode.com/users'); //lấy dữ liệu api
+        //kiểm tra rs (response) có request thành công chưa
+        if(res.ok){
+            let data = await res.json();// chuyển dữ liệu api thành kiểu sử dụng được {...}
+            console.log(res.status); //200
+            console.log(data[1].address);
+        }
+        /**
+         * Bảng status res
+         * | Status | Ý nghĩa      |
+            | ------ | ------------ |
+            | 200    | OK           |
+            | 201    | Created      |
+            | 400    | Bad request  |
+            | 401    | Unauthorized |
+            | 404    | Not found    |
+            | 500    | Server error |
+
+         */
     }catch(error){
         console.log(error);
     }
 }
 
-getUserAPI();
+getUserAPI();//xuất kết quả
