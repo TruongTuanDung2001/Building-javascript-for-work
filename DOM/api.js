@@ -80,3 +80,53 @@ promiseE2
     .catch((rj) => {
         console.log(rj);
     })
+
+
+//ASYNC/AWAIT
+// async là function trả về promise
+// await chờ promise
+// try/catch bắt lỗi reject
+
+
+//cấu trúc cơ bản
+// async function getUsers(){
+
+//     try{
+
+//         // gọi API
+//         let res = await fetch(url); lấy dữ liệu API
+
+//         // convert JSON
+//         let data = await res.json(); chuyển dữ liệu res thành chuỗi để làm việc
+
+//         // dùng data
+//         console.log(data);
+
+//     }catch(error){
+
+//         // API lỗi
+//         console.log(error);
+//     }
+// }
+
+//try catch là để bắt lỗi khi lấy dữ liệu sai, code hệ thống vẫn chạy ok
+//await luôn làm việc với promise, nếu promise là 1 function tự tạo có resolve và reject thì nếu thành công trả về resolve và ngược lại trả về reject
+// vd:
+// function orderFood(){
+//     return new Promise((resolve, reject) => {
+//         reject('Hết đồ ăn');
+//     });
+// }
+
+// async function test(){
+//     try{
+//         let food = await orderFood();
+
+//         console.log(food); 
+
+//     }catch(error){
+//         console.log(error);//log ra chỗ này vì ở hàm order food chỉ có reject / nếu như có resolve và có thêm reject thì hiện resolve trong try -> log ra và kết thúc hạm
+//     }
+// }
+
+// test();
