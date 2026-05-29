@@ -188,12 +188,16 @@ async function getUserAPI() {
 getUserAPI();//xuất kết quả
 
 //POST METHOD
-async function createUser() {
+async function postUser() {
     try {
         //
         let newUser = {
-            name: 'TruongTuanDung',
-            username: 'Toidodaden',
+            id: 5,
+            name: "King man",
+            email: "kingmanoffice@gmail.com",
+            age: 30,
+            avatar: "https://i.pravatar.cc/150?img=3",
+            isAdmin: false,
         }
         //
         let response = await fetch(
@@ -216,6 +220,10 @@ async function createUser() {
     }
 }
 //
+let btnPost = document.getElementById('btn-post');
+btnPost.addEventListener('click', function(){
+    postUser();
+});
 // createUser();
 /**
  *  | Method | Ý nghĩa     |
@@ -273,7 +281,7 @@ btnPut.addEventListener('click', function(){
 });
 
 //PATCH
-async function patchNameUser(name){
+async function patchNameUser(name){ //sửa 1 phần của user có id là 4 trong url thuiii, sửa xong chỉ phần đó thay đổi, vd: name
     try {
         let newUser = {
             name: name
@@ -302,3 +310,30 @@ btnPatch.addEventListener('click', function(e){
         patchNameUser(inputName.value);
     }else{ alert('No input data'); }
 })
+
+//Delete
+async function deleteUser(){
+    let responseGetUser = await fetch('http://localhost:3000/users');
+    let userApi = await responseGetUser.json();
+    console.log(userApi);
+    
+    let lastUser = userApi[userApi.length - 1];
+    //
+    try {
+        let response = await fetch(`http://localhost:3000/users/${lastUser.id}`, {
+            method: 'DELETE'
+        });
+
+        if(response.ok){
+            let data = response.json();
+            console.log(data);
+        }
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+let btnDelete = document.getElementById('btn-delete');
+btnDelete.addEventListener('click', function(){
+    deleteUser();
+});

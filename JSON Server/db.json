@@ -31,6 +31,46 @@
       "avatar": "https://i.pravatar.cc/150?img=3",
       "isAdmin": false,
       "id": "4"
+    },
+    {
+      "id": "Evo6AGH_iQ8",
+      "name": "King man",
+      "email": "kingmanoffice@gmail.com",
+      "age": 30,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
+    },
+    {
+      "id": "y_SwITt783s",
+      "name": "King man",
+      "email": "kingmanoffice@gmail.com",
+      "age": 30,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
+    },
+    {
+      "id": "RCbApcYX8sE",
+      "name": "King man",
+      "email": "kingmanoffice@gmail.com",
+      "age": 30,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
+    },
+    {
+      "id": "EsIfAW3jMn8",
+      "name": "King man",
+      "email": "kingmanoffice@gmail.com",
+      "age": 30,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
+    },
+    {
+      "id": "JJ_mOq8SnCQ",
+      "name": "King man",
+      "email": "kingmanoffice@gmail.com",
+      "age": 30,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
