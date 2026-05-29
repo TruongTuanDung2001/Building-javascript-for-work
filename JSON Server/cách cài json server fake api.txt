@@ -40,3 +40,93 @@ Chạy server
 npx json-server db.json
 Nó sẽ tạo API
 http://localhost:3000/users
+
+
+// sửa đổi thông tin api trong db.json
+// Sau đó API tự có
+Lấy tất cả user
+GET http://localhost:3000/users
+Lấy user theo id
+GET http://localhost:3000/users/1
+Thêm user
+POST http://localhost:3000/users
+Xóa user
+DELETE http://localhost:3000/users/1
+Sửa user
+PUT http://localhost:3000/users/1
+
+// thêm 1 api khác 
+Cái hay của JSON Server 😄
+
+Ông sửa trong:
+
+db.json
+
+thì API đổi theo luôn.
+
+Ví dụ thêm:
+
+"tasks": []
+
+thì tự có:
+
+http://localhost:3000/tasks
+
+😳
+
+Ví dụ database lớn hơn
+{
+  "users": [],
+  "tasks": [],
+  "products": [],
+  "comments": []
+}
+
+=> tự có 4 API 😄
+
+|| CÁCH ADD . FILE LÊN GITHUB SAU KHI ADD JSON SERVER
+
+D:\0 - HỌC LẬP TRÌNH\JS\Building-javascript-for-work\JSON Server nó như v nè
+
+À vậy là folder:
+
+JSON Server
+
+đang nằm bên trong project Git của ông 😄
+
+Nên Git mới thấy node_modules.
+
+Giờ fix chuẩn như này
+1. Tạo file .gitignore (quan trọng)
+
+ở root project:
+
+Building-javascript-for-work/.gitignore
+2. Thêm:
+node_modules
+JSON Server/node_modules
+
+hoặc gọn hơn:
+
+**/node_modules
+
+😄
+
+3. Quan trọng
+
+Nếu Git chưa track node_modules thì xong luôn.
+
+Không cần git rm.
+
+4. Test lại
+git add .
+
+nếu không còn spam warning là ổn 😄 / warning 1 2 cái là bth nha
+
+Vì sao git rm không được?
+
+Vì khả năng cao:
+
+node_modules chưa được commit/tracked
+
+Git chỉ warning thôi chứ chưa add thật.

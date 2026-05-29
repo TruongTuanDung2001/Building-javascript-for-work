@@ -7,7 +7,7 @@ Gửi user lên API.
 //GET api
 async function getUser(){
     try {
-        let response = await fetch('https://jsonplaceholder.typicode.com/users');
+        let response = await fetch('http://localhost:3000/users');
         if(response.ok){
             let data = await response.json();
             console.log(data);
@@ -19,30 +19,30 @@ async function getUser(){
 getUser();
 
 //POST
-async function postUser(){
-    try {
-        let newUser = {
-            name: 'Dung',
-            age: '25'
-        }
-        let response = await fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newUser)
-        });
-        if(!response.ok){
-            throw new Error('Post API failed');
-        }else{
-            let data = await response.json();
-            console.log(data);
-            getUser();
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
+// async function postUser(){
+//     try {
+//         let newUser = {
+//             name: 'Dung',
+//             age: '25'
+//         }
+//         let response = await fetch('https://jsonplaceholder.typicode.com/users', {
+//             method: 'POST', 
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(newUser)
+//         });
+//         if(!response.ok){
+//             throw new Error('Post API failed');
+//         }else{
+//             let data = await response.json();
+//             console.log(data);
+//             getUser();
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 //
 // postUser();
 
@@ -56,7 +56,7 @@ async function postUser(user){
             name: user
         }
 
-        let response = await fetch('https://6a196042489e47157519ddff.mockapi.io/api/user/users',{
+        let response = await fetch('http://localhost:3000/users',{
             method: 'POST',
             headers: {
                 'Content-Type':  'application/json',
@@ -80,19 +80,9 @@ btnCreateUser.addEventListener('click', function(){
 })
 
 //exp3
-/**
- * [
-  {
-    "id": 1,
-    "name": "Dung",
-    "age": 25,
-    "address": "TP.HCM"
-  }
-]
-
-https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io
- */
 //mockapi: https://mockapi.io/projects/6a196042489e47157519de00#
 // fake api: https://6a196042489e47157519ddff.mockapi.io/api/user/users
 
 //npx json-server db.json mở server để fake api
+
+

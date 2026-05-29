@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nguyen Van A",
       "email": "vana@gmail.com",
       "age": 20,
@@ -9,7 +9,7 @@
       "isAdmin": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Tran Thi B",
       "email": "thib@gmail.com",
       "age": 22,
@@ -17,12 +17,17 @@
       "isAdmin": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Le Van C",
       "email": "vanc@gmail.com",
       "age": 19,
       "avatar": "https://i.pravatar.cc/150?img=3",
       "isAdmin": false
+    },
+    {
+      "name": "toi do da den",
+      "id": "GPlU2l5yNFM"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
