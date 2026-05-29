@@ -239,10 +239,14 @@ async function createUser() {
 // Body: là dữ liệu gửi lên server, nhớ chuyển sang kiêu JSON
 
 //PUT PATH
-async function putUser(name){
+async function putUser(){ //thay đổi toàn bộ dữ liêu, nếu ít thuộc tính như chỉ có 'name' như ở dưới thì cập nhật chỉ có id(mặc định theo url) và cái name mới thôi.
     try {
         let updateUser = {
-            name: name
+            name: "truongtuandung",
+            email: "truongtuandung@gmail.com",
+            age: 25,
+            avatar: "https://i.pravatar.cc/150?img=3",
+            isAdmin: false
         }
 
         let response = await fetch('http://localhost:3000/users/4',{
@@ -264,9 +268,37 @@ async function putUser(name){
 }
 let btnPut = document.getElementById('btn-put');
 let inputName = document.getElementById('input-name');
-btnPut.addEventListener('click', function(e){
+btnPut.addEventListener('click', function(){
+    putUser();
+});
+
+//PATCH
+async function patchNameUser(name){
+    try {
+        let newUser = {
+            name: name
+        }
+
+        let response = await fetch('http://localhost:3000/users/4', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+        });
+
+        if(response.ok){
+            let data = await response.json();
+            console.log(data);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+let btnPatch = document.getElementById('btn-patch');
+btnPatch.addEventListener('click', function(e){
     e.preventDefault();
     if(inputName.value.length != 0){
-        putUser(inputName.value);
-    }else{ alert('No data input') }
-});
+        patchNameUser(inputName.value);
+    }else{ alert('No input data'); }
+})

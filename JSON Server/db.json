@@ -25,7 +25,11 @@
       "isAdmin": false
     },
     {
-      "name": "j",
+      "name": "truongtuandung",
+      "email": "truongtuandung@gmail.com",
+      "age": 25,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false,
       "id": "4"
     }
   ],
