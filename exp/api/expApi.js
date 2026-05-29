@@ -94,3 +94,5 @@ https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io
  */
 //mockapi: https://mockapi.io/projects/6a196042489e47157519de00#
 // fake api: https://6a196042489e47157519ddff.mockapi.io/api/user/users
+
+//npx json-server db.json mở server để fake api

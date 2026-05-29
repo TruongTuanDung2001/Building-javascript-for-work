@@ -1,0 +1,42 @@
+Có ảnh hưởng source không?
+
+Hầu như không.
+
+Nó chỉ thêm:
+
+node_modules
+package.json
+db.json
+
+vào project thôi.
+
+Code JS frontend của ông vẫn y nguyên.
+
+Cách setup siêu nhanh
+Bước 1
+
+Mở terminal trong project.
+
+Bước 2
+
+Cài:
+
+npm install json-server
+Bước 3
+
+Tạo file:
+
+db.json
+
+Ví dụ:
+
+{
+  "users": []
+}
+Bước 4
+
+Chạy server
+
+npx json-server db.json
+Nó sẽ tạo API
+http://localhost:3000/users

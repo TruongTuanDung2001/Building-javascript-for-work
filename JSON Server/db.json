@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A",
+      "email": "vana@gmail.com",
+      "age": 20,
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "isAdmin": false
+    },
+    {
+      "id": 2,
+      "name": "Tran Thi B",
+      "email": "thib@gmail.com",
+      "age": 22,
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "isAdmin": true
+    },
+    {
+      "id": 3,
+      "name": "Le Van C",
+      "email": "vanc@gmail.com",
+      "age": 19,
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "isAdmin": false
+    }
+  ]
+}
