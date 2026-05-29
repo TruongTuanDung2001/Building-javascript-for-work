@@ -161,7 +161,7 @@ test(); //OK
 //https://jsonplaceholder.typicode.com/users
 async function getUserAPI() {
     try {
-        let res = await fetch('https://jsonplaceholder.typicode.com/users'); //lấy dữ liệu api
+        let res = await fetch('http://localhost:3000/users'); //lấy dữ liệu api
         //kiểm tra rs (response) có request thành công chưa
         if (res.ok) {
             let data = await res.json();// chuyển dữ liệu api thành kiểu sử dụng được {...}
@@ -197,7 +197,7 @@ async function createUser() {
         }
         //
         let response = await fetch(
-            'https://jsonplaceholder.typicode.com/users',
+            'http://localhost:3000/users',
             {
                 method: 'POST',
                 headers: {
@@ -216,7 +216,7 @@ async function createUser() {
     }
 }
 //
-createUser();
+// createUser();
 /**
  *  | Method | Ý nghĩa     |
     | ------ | ----------- |
@@ -237,3 +237,36 @@ createUser();
  */
 
 // Body: là dữ liệu gửi lên server, nhớ chuyển sang kiêu JSON
+
+//PUT PATH
+async function putUser(name){
+    try {
+        let updateUser = {
+            name: name
+        }
+
+        let response = await fetch('http://localhost:3000/users/4',{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateUser)
+        });
+
+        if(response.ok){
+            let data = await response.json();
+            console.log('Put api success');
+            console.log(data);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+let btnPut = document.getElementById('btn-put');
+let inputName = document.getElementById('input-name');
+btnPut.addEventListener('click', function(e){
+    e.preventDefault();
+    if(inputName.value.length != 0){
+        putUser(inputName.value);
+    }else{ alert('No data input') }
+});
