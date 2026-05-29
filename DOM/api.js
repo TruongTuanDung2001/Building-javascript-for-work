@@ -12,34 +12,34 @@
 
 let promise = new Promise((resolve, reject) => {
     let success = true;
-    if(success){
+    if (success) {
         resolve('Thành công'); //gám giá trị bắt lỗi khi thành công
-    }else{
+    } else {
         reject.log('Thất bại'); //gán giá trị khi thất bại
     }
 });
 
 promise
-    .then((data) =>{
+    .then((data) => {
         console.log(data); //Chạy khi promise thành công
     })
     .catch((error) => {
         console.log(error); //Chạy khi promise thất bại
     })
-    .finally(() =>{
+    .finally(() => {
         console.log('Finaly'); //Lúc nào cũng chạy cuối cùng
-        
+
     })
 
 //
 function orderFood() {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('Burger');
-        }, 2000);
-        setTimeout(() => {
-            reject('No food');
-        }, 3000)
+        // setTimeout(() => {
+        //     resolve('Burger');
+        // }, 2000);
+        // setTimeout(() => {
+        //     reject('No food');
+        // }, 3000)
     });
 }
 
@@ -54,9 +54,9 @@ orderFood()
 //exp promise
 // tạo promise sau 2 giây trả về 'Hello world'
 let promiseE1 = new Promise((rs, rj) => {
-    setTimeout(() => {
-        rs('Hello World');
-    }, 2000);
+    // setTimeout(() => {
+    //     rs('Hello World');
+    // }, 2000);
 });
 
 promiseE1
@@ -68,9 +68,9 @@ console.log(typeof promiseE1);
 //nếu số > 5 => resolve else reject
 let num = 6;
 let promiseE2 = new Promise((rs, rj) => {
-    if(num > 5){
+    if (num > 5) {
         rs('Number larger five');
-    }else{ rj('Number smaller five '); }
+    } else { rj('Number smaller five '); }
 });
 
 promiseE2
@@ -133,21 +133,21 @@ promiseE2
 
 //Exp async/await
 //Tạo hàm delay 3 giây rồi log: 'Done'
-function delay(){
+function delay() {
     return new Promise((rs, rj) => {
-        setTimeout(() => {
-            rs('Done');
-        },2000)
+        // setTimeout(() => {
+        //     rs('Done');
+        // },2000)
     });
 }
 
 //Cách 1: không dùng async
-delay() 
+delay()
     .then((rs) => console.log(rs))
     .catch((rj) => console.log(rj))
 
 //Cách 2: dùng async
-async function test(){
+async function test() {
     try {
         let resultDelay = await delay();
         console.log(resultDelay);
@@ -159,14 +159,14 @@ test(); //OK
 
 //Fetch API
 //https://jsonplaceholder.typicode.com/users
-async function getUserAPI(){
-    try{
+async function getUserAPI() {
+    try {
         let res = await fetch('https://jsonplaceholder.typicode.com/users'); //lấy dữ liệu api
         //kiểm tra rs (response) có request thành công chưa
-        if(res.ok){
+        if (res.ok) {
             let data = await res.json();// chuyển dữ liệu api thành kiểu sử dụng được {...}
             console.log(res.status); //200
-            console.log(data[1].address);
+            console.log(data);
         }
         /**
          * Bảng status res
@@ -180,9 +180,60 @@ async function getUserAPI(){
             | 500    | Server error |
 
          */
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
 }
 
 getUserAPI();//xuất kết quả
+
+//POST METHOD
+async function createUser() {
+    try {
+        //
+        let newUser = {
+            name: 'TruongTuanDung',
+            username: 'Toidodaden',
+        }
+        //
+        let response = await fetch(
+            'https://jsonplaceholder.typicode.com/users',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            }
+        );
+        //
+        if (response.ok) {
+            let data = await response.json();
+            console.log(data);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+//
+createUser();
+/**
+ *  | Method | Ý nghĩa     |
+    | ------ | ----------- |
+    | GET    | lấy dữ liệu |
+    | POST   | tạo dữ liệu |
+    | PUT    | sửa toàn bộ |
+    | PATCH  | sửa 1 phần  |
+    | DELETE | xoá         |
+ */
+
+/** Khai báo kiểu của dữ liệu để server biết
+ *  | Content-Type        | Ý nghĩa      |
+    | ------------------- | ------------ |
+    | application/json    | dữ liệu JSON |
+    | text/html           | HTML         |
+    | text/plain          | text         |
+    | multipart/form-data | upload file  |
+ */
+
+// Body: là dữ liệu gửi lên server, nhớ chuyển sang kiêu JSON
