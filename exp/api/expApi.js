@@ -27,7 +27,9 @@ async function postUser(){
         }
         let response = await fetch('https://jsonplaceholder.typicode.com/users', {
             method: 'POST', 
-            'Content-Type': 'Application-json',
+            headers: {
+                'Content-Type': 'Application-json',
+            },
             body: JSON.stringify(newUser)
         });
         if(!response.ok){
@@ -54,9 +56,17 @@ async function postUser(user){
             name: user
         }
 
-        let response = await fetch('https://jsonplaceholder.typicode.com/users',{
+        // let response = await fetch('https://jsonplaceholder.typicode.com/users',{
+        //     method: 'POST',
+        //     'Content-Type':  'Application-json',
+        //     body: JSON.stringify(newUser)
+        // })
+
+        let response = await fetch('https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io/',{
             method: 'POST',
-            'Content-Type':  'Application-json',
+            headers: {
+                'Content-Type':  'Application-json',
+            },
             body: JSON.stringify(newUser)
         })
         if(!response.ok){
@@ -74,3 +84,17 @@ async function postUser(user){
 btnCreateUser.addEventListener('click', function(){
     postUser(inputUser.value);
 })
+
+//exp3
+/**
+ * [
+  {
+    "id": 1,
+    "name": "Dung",
+    "age": 25,
+    "address": "TP.HCM"
+  }
+]
+
+https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io
+ */
