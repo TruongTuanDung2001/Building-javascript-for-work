@@ -28,7 +28,7 @@ async function postUser(){
         let response = await fetch('https://jsonplaceholder.typicode.com/users', {
             method: 'POST', 
             headers: {
-                'Content-Type': 'Application-json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(newUser)
         });
@@ -44,7 +44,7 @@ async function postUser(){
     }
 }
 //
-postUser();
+// postUser();
 
 //exp 2: Form tạo user
 let inputUser = document.getElementById('inputUser');
@@ -56,16 +56,10 @@ async function postUser(user){
             name: user
         }
 
-        // let response = await fetch('https://jsonplaceholder.typicode.com/users',{
-        //     method: 'POST',
-        //     'Content-Type':  'Application-json',
-        //     body: JSON.stringify(newUser)
-        // })
-
-        let response = await fetch('https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io/',{
+        let response = await fetch('https://6a196042489e47157519ddff.mockapi.io/api/user/users',{
             method: 'POST',
             headers: {
-                'Content-Type':  'Application-json',
+                'Content-Type':  'application/json',
             },
             body: JSON.stringify(newUser)
         })
@@ -98,3 +92,5 @@ btnCreateUser.addEventListener('click', function(){
 
 https://967c0f9a-7dc9-42d4-9a85-205ef5446159.mock.pstmn.io
  */
+//mockapi: https://mockapi.io/projects/6a196042489e47157519de00#
+// fake api: https://6a196042489e47157519ddff.mockapi.io/api/user/users
